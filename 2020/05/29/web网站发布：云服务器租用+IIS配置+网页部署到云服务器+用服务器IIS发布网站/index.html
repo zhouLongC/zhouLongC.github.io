@@ -6,15 +6,48 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | zhou_LC个人博客</title>
+  <title>web网站发布：云服务器租用+IIS配置+网页部署到云服务器+用服务器IIS发布网站 | zhou_LC个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zhou_LC个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/2/index.html">
+  <meta name="description" content="一、开始前需准备：1.一个包含web项目的文件夹（html、css、js、images等）2.租用服务器的资金（本人选用的是阿里云学生服务器，系统镜像为Windows 2016 数据中心版）如图：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web网站发布：云服务器租用+IIS配置+网页部署到云服务器+用服务器IIS发布网站">
+<meta property="og:url" content="http://yoursite.com/2020/05/29/web%E7%BD%91%E7%AB%99%E5%8F%91%E5%B8%83%EF%BC%9A%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%9F%E7%94%A8+IIS%E9%85%8D%E7%BD%AE+%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8+%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8IIS%E5%8F%91%E5%B8%83%E7%BD%91%E7%AB%99/index.html">
 <meta property="og:site_name" content="zhou_LC个人博客">
+<meta property="og:description" content="一、开始前需准备：1.一个包含web项目的文件夹（html、css、js、images等）2.租用服务器的资金（本人选用的是阿里云学生服务器，系统镜像为Windows 2016 数据中心版）如图：">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528204816194.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528204909428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528210305130.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528205604528.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528205916942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528210419388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528210615959.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528210921997.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020052821125694.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528211346384.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528211553333.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528211855253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528212155924.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528212323169.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528212548343.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528212655814.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020052821302341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528214002180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528214303410.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528214505822.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528214710287.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528215435940.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528220207535.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528220338301.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528220554579.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528220805639.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528220827853.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200528221145726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-05-29T02:22:36.000Z">
+<meta property="article:modified_time" content="2020-08-12T13:17:51.801Z">
 <meta property="article:author" content="zhou_LC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200528204816194.png">
   
     <link rel="alternative" href="/atom.xml" title="zhou_LC个人博客" type="application/atom+xml">
   
@@ -173,165 +206,191 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-web网站发布：云服务器租用+IIS配置+网页部署到云服务器+用服务器IIS发布网站" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      web网站发布：云服务器租用+IIS配置+网页部署到云服务器+用服务器IIS发布网站
+    </h1>
+  
+
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/05/29/web%E7%BD%91%E7%AB%99%E5%8F%91%E5%B8%83%EF%BC%9A%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%9F%E7%94%A8+IIS%E9%85%8D%E7%BD%AE+%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8+%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8IIS%E5%8F%91%E5%B8%83%E7%BD%91%E7%AB%99/" class="archive-article-date">
+  	<time datetime="2020-05-29T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>一、开始前需准备：</strong><br>1.一个包含web项目的文件夹（html、css、js、images等）<br>2.租用服务器的资金（本人选用的是阿里云学生服务器，系统镜像为Windows 2016 数据中心版）如图：</p>
+<a id="more"></a>
+
+<p><strong>二、具体步骤：</strong><br>1.打开阿里云（<a target="_blank" rel="noopener" href="https://www.aliyun.com),并登录/">https://www.aliyun.com），并登录</a></p>
+<p>2.找到租用服务器的相关界面，选择自己要租用的服务器，在购买前的配置界面，根据自己的需求做好相应配置（不懂的配置属性可以自己百度查），经过一系列常规操作后，购买完毕。</p>
+<p>3.找到页面顶部标题栏中的“控制台”，并点击<br><img src="https://img-blog.csdnimg.cn/20200528204816194.png" alt="在这里插入图片描述"><br>4.点击自己开通的云产品（以自己开通的云产品为准）<br><img src="https://img-blog.csdnimg.cn/20200528204909428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>5.点击自己的服务器<br><img src="https://img-blog.csdnimg.cn/20200528210305130.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>6.依次点击1、2，按照提示设置”远程连接“密码，<br><img src="https://img-blog.csdnimg.cn/20200528205604528.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>7.<br>再设置服务器密码（为服务器开机时的密码，类似自己电脑开机时输入的密码）<br><img src="https://img-blog.csdnimg.cn/20200528205916942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>8.之后点击”远程连接“，输入”远程连接“密码，再点击圈中命令<br><img src="https://img-blog.csdnimg.cn/20200528210419388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>9.输入”服务器密码“（注意，不是输自己电脑的开机密码！而是第11步时设置的”服务器密码“）<br><img src="https://img-blog.csdnimg.cn/20200528210615959.png" alt="在这里插入图片描述"><br>10.进入成功后，发现服务器界面就像一台刚买的电脑（或者重装后的电脑），经验证，现在初步的服务器已经配置好了<br><img src="https://img-blog.csdnimg.cn/20200528210921997.png" alt="在这里插入图片描述"><br>11.接下来，回到自己的电脑！（注意，不是在服务器界面操作了！）<br>12.在自己电脑底部，搜索”远程桌面连接“<br><img src="https://img-blog.csdnimg.cn/2020052821125694.png" alt="在这里插入图片描述"><br>13.”远程桌面连接“在桌面生成快捷方式（为了以后操作方便）<br><img src="https://img-blog.csdnimg.cn/20200528211346384.png" alt="在这里插入图片描述"><br>14.点击”远程桌面连接“并按要求输入（参照第10步界面的IP地址和账号）<br><img src="https://img-blog.csdnimg.cn/20200528211553333.png" alt="在这里插入图片描述"><br>15.连接成功后，即可得到一个可缩放的服务器界面框<br><img src="https://img-blog.csdnimg.cn/20200528211855253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>16.根据需要，可以Ctrl+C/V实现将文件从自己电脑桌面复制粘贴到服务器桌面<br>17.在服务器桌面底部搜索找到”服务器管理器“，并点击<br><img src="https://img-blog.csdnimg.cn/20200528212155924.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>18.点击圈中选项<br><img src="https://img-blog.csdnimg.cn/20200528212323169.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>19.一直点击”下一步“，直到到达”服务器角色“<br><img src="https://img-blog.csdnimg.cn/20200528212548343.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>20.将Web服务器（IIS）中的后代选项全部选中，直到出现Web服务器（IIS）前面的对号标志（如果自己不了解每个选项，那么全选上就行了，免得之后因为漏装了某个导致找不出错来），期间提示添加功能就添加就行，完成后点下一步<br><img src="https://img-blog.csdnimg.cn/20200528212655814.png" alt="在这里插入图片描述"><br>21.到达”功能“后，这两个选项以及其中后代选项等等全部选中，直到出现前面的对号标志，期间提示添加功能就添加就行，完成后点下一步<br><img src="https://img-blog.csdnimg.cn/2020052821302341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>22.到达”角色服务“后，所有选项全选<br>23.之后点安装，稍等片刻，安装完毕<br>24.在浏览器中输入127.0.0.1如果为此页面则配置成功<br><img src="https://img-blog.csdnimg.cn/20200528214002180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>25.之后在控制面板中搜索找到管理工具，再找到IIS，发送到桌面它的快捷方式<br><img src="https://img-blog.csdnimg.cn/20200528214303410.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>26.接下来打开 IIS，一次点击1、2、3处操作（2之后鼠标右键）<br><img src="https://img-blog.csdnimg.cn/20200528214505822.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>27.点击添加网站后，输入网站名称，接着选择项目文件（第20步中，介绍了如何将项目文件从自己电脑桌面移植到服务器桌面）的物理路径，端口设为80，其他的空不要管，然后回车或点击确定<br><img src="https://img-blog.csdnimg.cn/20200528214710287.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>28.打开自己项目文件的属性,,按如图顺序操作(序号4为输入Everyone，序号5为点击检查名称)<br><img src="https://img-blog.csdnimg.cn/20200528215435940.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>29.之后设置”默认文档“<br><img src="https://img-blog.csdnimg.cn/20200528220207535.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>30.第一个为自己网站的首页，没有就点击添加，添加上首页的名称（带有后缀html）<br><img src="https://img-blog.csdnimg.cn/20200528220338301.png" alt="在这里插入图片描述"><br>31.点击”应用进程池“，在此界面进行如下操作<br><img src="https://img-blog.csdnimg.cn/20200528220554579.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>32.在“高级设置”中，将以下两个属性的默认值调整为以下两个属性值<br><img src="https://img-blog.csdnimg.cn/20200528220805639.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200528220827853.png" alt="在这里插入图片描述"><br>33.浏览网站，检查有无错误<br><img src="https://img-blog.csdnimg.cn/20200528221145726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>34.若网站正常，则可以回到自己电脑的桌面，在浏览器中输入服务器的IP地址，即可跳转到自己通过IIS部署好的网站</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/money.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/22/java%E6%8E%A5%E5%8F%A3%E5%9B%9E%E8%B0%83%E5%8F%8A%E6%8E%A5%E5%8F%A3%E5%A4%9A%E4%B8%AA%E6%80%A7%E8%B4%A8%E7%9A%84%E4%BE%8B%E5%AD%90/" class="archive-article-date">
-  	<time datetime="2020-04-22T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/java%E6%8E%A5%E5%8F%A3%E5%9B%9E%E8%B0%83%E5%8F%8A%E6%8E%A5%E5%8F%A3%E5%A4%9A%E4%B8%AA%E6%80%A7%E8%B4%A8%E7%9A%84%E4%BE%8B%E5%AD%90/">java接口回调及接口多个性质的例子</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/29/web%E7%BD%91%E7%AB%99%E5%8F%91%E5%B8%83%EF%BC%9A%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%9F%E7%94%A8+IIS%E9%85%8D%E7%BD%AE+%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8+%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8IIS%E5%8F%91%E5%B8%83%E7%BD%91%E7%AB%99/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/22/java%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BE%8B%E5%AD%90%EF%BC%8C%E4%BC%98%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2020-04-22T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/06/16/Java%E4%B8%ADDriverManager.getConnection(uri,%20user,%20password)%E8%BF%94%E5%9B%9Enull%E7%9A%84%E5%8E%9F%E5%9B%A0%E4%B9%8B%E4%B8%80/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java中DriverManager.getConnection(uri, user, password)返回null的原因之一
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/16/Python%20chrome_options=option%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95%E6%97%B6%EF%BC%8Cdriver.get%EF%BC%88%EF%BC%89%E5%A4%B1%E6%95%88%E5%8E%9F%E5%9B%A0%E4%B9%8B%E4%B8%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python chrome_options=option设置用户自己的数据目录时，driver.get（）失效原因之一</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/java%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BE%8B%E5%AD%90%EF%BC%8C%E4%BC%98%E7%82%B9/">java接口的介绍，性质，例子，优点</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2020/05/29/web%E7%BD%91%E7%AB%99%E5%8F%91%E5%B8%83%EF%BC%9A%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%9F%E7%94%A8+IIS%E9%85%8D%E7%BD%AE+%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8+%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8IIS%E5%8F%91%E5%B8%83%E7%BD%91%E7%AB%99/", 
+    sourceId: "web网站发布：云服务器租用+IIS配置+网页部署到云服务器+用服务器IIS发布网站",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/17/java%E4%B8%8A%E8%BD%AC%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BC%98%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2020-04-17T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/17/java%E4%B8%8A%E8%BD%AC%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BC%98%E7%82%B9/">java上转型对象的理解，性质，优点</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/17/java%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BC%98%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2020-04-17T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/17/java%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BC%98%E7%82%B9/">java抽象类的例子，性质，优点</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/15/java%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E4%BE%8B%E5%AD%90/" class="archive-article-date">
-  	<time datetime="2020-04-15T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/15/java%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E4%BE%8B%E5%AD%90/">java重写与重载的区别与例子</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -359,8 +418,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

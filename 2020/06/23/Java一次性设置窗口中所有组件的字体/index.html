@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | zhou_LC个人博客</title>
+  <title>Java一次性设置窗口中所有组件的字体 | zhou_LC个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zhou_LC个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/2/index.html">
+  <meta name="description" content="声明：该方法参考自 codeday ，作者 codeday； 下面结合此方法逻辑写的代码为原创。 下面只为类中部分必要代码：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java一次性设置窗口中所有组件的字体">
+<meta property="og:url" content="http://yoursite.com/2020/06/23/Java%E4%B8%80%E6%AC%A1%E6%80%A7%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AD%97%E4%BD%93/index.html">
 <meta property="og:site_name" content="zhou_LC个人博客">
+<meta property="og:description" content="声明：该方法参考自 codeday ，作者 codeday； 下面结合此方法逻辑写的代码为原创。 下面只为类中部分必要代码：">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-23T02:22:36.000Z">
+<meta property="article:modified_time" content="2020-08-12T13:12:23.263Z">
 <meta property="article:author" content="zhou_LC">
 <meta name="twitter:card" content="summary">
   
@@ -173,165 +177,191 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java一次性设置窗口中所有组件的字体" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java一次性设置窗口中所有组件的字体
+    </h1>
+  
+
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/06/23/Java%E4%B8%80%E6%AC%A1%E6%80%A7%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AD%97%E4%BD%93/" class="archive-article-date">
+  	<time datetime="2020-06-23T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-23</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>声明：该方法参考自 <a target="_blank" rel="noopener" href="https://codeday.me/bug/20190105/511619.html">codeday</a> ，作者 codeday； 下面结合此方法逻辑写的代码为原创。</p>
+<p>下面只为类中部分必要代码：</p>
+<a id="more"></a>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeFont</span><span class="params">(Component component, Font font)</span></span>&#123;</span><br><span class="line">        component.setFont(font);</span><br><span class="line">        <span class="keyword">if</span> (component <span class="keyword">instanceof</span> Container)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (Component child : ((Container)component ).getComponents())</span><br><span class="line">            &#123;</span><br><span class="line">                changeFont(child, font);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">WindowLog</span><span class="params">(String s, <span class="keyword">int</span> x ,<span class="keyword">int</span> y, <span class="keyword">int</span> w, <span class="keyword">int</span> h)</span> </span>&#123;</span><br><span class="line">        setLayout(<span class="keyword">new</span> FlowLayout());</span><br><span class="line">        init(s);</span><br><span class="line">        setLocation(x, y);</span><br><span class="line">        setSize(w, h);</span><br><span class="line">        Font f = <span class="keyword">new</span> Font(<span class="string">&quot;宋体&quot;</span>, Font.PLAIN, <span class="number">20</span>); <span class="comment">//创建字体对象</span></span><br><span class="line">        changeFont(<span class="keyword">this</span>, f); <span class="comment">//将当前窗口和字体对象传入</span></span><br><span class="line">        setVisible(<span class="keyword">true</span>);</span><br><span class="line">        setDefaultCloseOperation(DISPOSE_ON_CLOSE);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/money.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/22/java%E6%8E%A5%E5%8F%A3%E5%9B%9E%E8%B0%83%E5%8F%8A%E6%8E%A5%E5%8F%A3%E5%A4%9A%E4%B8%AA%E6%80%A7%E8%B4%A8%E7%9A%84%E4%BE%8B%E5%AD%90/" class="archive-article-date">
-  	<time datetime="2020-04-22T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/java%E6%8E%A5%E5%8F%A3%E5%9B%9E%E8%B0%83%E5%8F%8A%E6%8E%A5%E5%8F%A3%E5%A4%9A%E4%B8%AA%E6%80%A7%E8%B4%A8%E7%9A%84%E4%BE%8B%E5%AD%90/">java接口回调及接口多个性质的例子</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/23/Java%E4%B8%80%E6%AC%A1%E6%80%A7%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AD%97%E4%BD%93/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/22/java%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BE%8B%E5%AD%90%EF%BC%8C%E4%BC%98%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2020-04-22T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/07/08/Java%E4%B8%ADInetAddress%E7%B1%BB%E5%AF%B9%E4%BA%8E%E4%B8%BB%E6%9C%BA%E5%9F%9F%E5%90%8D%E5%8F%8AIP%E5%9C%B0%E5%9D%80%E7%9A%84%E8%BF%94%E5%9B%9E%E6%B5%8B%E8%AF%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java中InetAddress类对于主机域名及IP地址的返回测试
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/16/Java%E4%B8%ADDriverManager.getConnection(uri,%20user,%20password)%E8%BF%94%E5%9B%9Enull%E7%9A%84%E5%8E%9F%E5%9B%A0%E4%B9%8B%E4%B8%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中DriverManager.getConnection(uri, user, password)返回null的原因之一</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/java%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BE%8B%E5%AD%90%EF%BC%8C%E4%BC%98%E7%82%B9/">java接口的介绍，性质，例子，优点</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2020/06/23/Java%E4%B8%80%E6%AC%A1%E6%80%A7%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AD%97%E4%BD%93/", 
+    sourceId: "Java一次性设置窗口中所有组件的字体",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/17/java%E4%B8%8A%E8%BD%AC%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BC%98%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2020-04-17T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/17/java%E4%B8%8A%E8%BD%AC%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BC%98%E7%82%B9/">java上转型对象的理解，性质，优点</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/17/java%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BC%98%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2020-04-17T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/17/java%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BC%98%E7%82%B9/">java抽象类的例子，性质，优点</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/15/java%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E4%BE%8B%E5%AD%90/" class="archive-article-date">
-  	<time datetime="2020-04-15T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/15/java%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E4%BE%8B%E5%AD%90/">java重写与重载的区别与例子</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -359,8 +389,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

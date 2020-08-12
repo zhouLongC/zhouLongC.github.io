@@ -6,19 +6,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>java重写与重载的区别与例子 | zhou_LC个人博客</title>
+  <title>Hexo搭建个人博客并部署到GitHub上（附带修改博客主题） | zhou_LC个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先需要清楚方法头和方法体的概念，其概念如下：方法头： 修饰符+返回类型 +方法名（形参列表）      例如：public static void main(String []args)方法体： { }的内容（包括这两个大括号和内部所有语法）">
+  <meta name="description" content="Hexo搭建个人博客并部署到GitHub（附带修改博客主题）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java重写与重载的区别与例子">
-<meta property="og:url" content="http://yoursite.com/post/undefined.html">
+<meta property="og:title" content="Hexo搭建个人博客并部署到GitHub上（附带修改博客主题）">
+<meta property="og:url" content="http://yoursite.com/2020/08/11/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A%EF%BC%88%E9%99%84%E5%B8%A6%E4%BF%AE%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%EF%BC%89/index.html">
 <meta property="og:site_name" content="zhou_LC个人博客">
-<meta property="og:description" content="首先需要清楚方法头和方法体的概念，其概念如下：方法头： 修饰符+返回类型 +方法名（形参列表）      例如：public static void main(String []args)方法体： { }的内容（包括这两个大括号和内部所有语法）">
+<meta property="og:description" content="Hexo搭建个人博客并部署到GitHub（附带修改博客主题）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-15T02:22:36.000Z">
-<meta property="article:modified_time" content="2020-08-12T13:10:33.807Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200811230436725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200811230611505.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200811230800956.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200811230900447.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200811231021521.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020081123111449.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200811231519962.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020081123161192.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200811231651677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020081123172279.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200811232254590.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200811232323177.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200811232632598.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020081123312149.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2020-08-11T03:22:36.000Z">
+<meta property="article:modified_time" content="2020-08-12T13:21:06.066Z">
 <meta property="article:author" content="zhou_LC">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200811230436725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="zhou_LC个人博客" type="application/atom+xml">
   
@@ -177,14 +192,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-java重写与重载的区别与例子" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Hexo搭建个人博客并部署到GitHub上（附带修改博客主题）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      java重写与重载的区别与例子
+      Hexo搭建个人博客并部署到GitHub上（附带修改博客主题）
     </h1>
   
 
@@ -195,26 +210,19 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/post/undefined.html" class="archive-article-date">
-  	<time datetime="2020-04-15T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
+<a href="/2020/08/11/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A%EF%BC%88%E9%99%84%E5%B8%A6%E4%BF%AE%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-08-11T03:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>首先需要清楚方法头和方法体的概念，其概念如下：<br>方法头： 修饰符+返回类型 +方法名（形参列表）      例如：public static void main(String []args)<br>方法体： { }的内容（包括这两个大括号和内部所有语法）</p>
+        <p>Hexo搭建个人博客并部署到GitHub（附带修改博客主题）</p>
 <a id="more"></a>
 
-<p><strong>重写</strong>：<strong>与其父类方法方法名、形参列表完全相同；修饰符可以相同，可以不同（但不能降低访问权限）；返回类型可以相同，也可以是父类方法的子类型；方法体的内容不一样；所以可以理解成外壳相似，内部不一样。</strong><br>例如：假设A类有如下方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void speak(int a)&#123;</span><br><span class="line">    System.out.println(&quot;A&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>B继承于A,如果B中定义一个方法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void speak(int b)&#123;&#x2F;&#x2F;(也可以(public void speak(int a))</span><br><span class="line">    System.out.println(&quot;B&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>则对此个例子来说，称B类的speak方法重写了A类中的speak方法</p>
-<p><strong>重载</strong>：<strong>两个或多个方法的方法头中除方法名相同外，其他都可以不相同，方法体也不相同。</strong><br>例如：有一个方法定义为float add(float a, float b)，然后，再定义一个方法long add(long a, long b)</p>
+<p>1）安装Node.js<br><img src="https://img-blog.csdnimg.cn/20200811230436725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>2）node -v，查看node版本，npm -v，查看npm版本<br><img src="https://img-blog.csdnimg.cn/20200811230611505.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3）npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org,安装淘宝的cnpm/">http://registry.npm.taobao.org，安装淘宝的cnpm</a> 管理器<br><img src="https://img-blog.csdnimg.cn/20200811230800956.png" alt="在这里插入图片描述"><br>4）cnpm -v，查看cnpm版本<br><img src="https://img-blog.csdnimg.cn/20200811230900447.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>5）cnpm install -g hexo-cli，安装hexo框架<br><img src="https://img-blog.csdnimg.cn/20200811231021521.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>6）hexo -v，查看hexo版本<br><img src="https://img-blog.csdnimg.cn/2020081123111449.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>7）cd d: 进入D盘（此处以D盘为例）mkdir blog，创建blog目录<br><img src="https://img-blog.csdnimg.cn/20200811231519962.png" alt="在这里插入图片描述">8）cd blog，进入blog目录，hexo init，生成博客 初始化博客（若出错，则需先安装Git，安装后命令行输入git，检查Git是否已经配置环境变量）<br><img src="https://img-blog.csdnimg.cn/2020081123161192.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>9）hexo s，启动本地博客服务<br><img src="https://img-blog.csdnimg.cn/20200811231651677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>10）<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E6%9C%AC%E5%9C%B0%E8%AE%BF%E9%97%AE%E5%9C%B0%E5%9D%80">http://localhost:4000/，本地访问地址</a><br>11）hexo n “我的第一篇文章”，创建新的文章<br><img src="https://img-blog.csdnimg.cn/2020081123172279.png" alt="在这里插入图片描述"><br>12）hexo clean，清理；hexo g，生成<br>13）登录Github并创建一个新的仓库 xxxxxxxx.github.io   (x处替换为自己的Github名字）<br>14）cnpm install –save hexo-deployer-git，在blog目录下安装git部署插件<br><img src="https://img-blog.csdnimg.cn/20200811232254590.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>15）配置_config.yml（在blog文件夹中）<br><img src="https://img-blog.csdnimg.cn/20200811232323177.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>16）hexo d，部署到Github仓库里<br><a target="_blank" rel="noopener" href="https://xxxxxxxx.github.io/">https://xxxxxxxx.github.io/</a>   (x处替换为自己的Github名字），访问这个地址可以查看博客</p>
+<p>17）git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia，下载yilia主题到本地<br><img src="https://img-blog.csdnimg.cn/20200811232632598.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>18）修改hexo根目录下的 _config.yml 文件 ： theme: yilia<br>19）hexo clean，清理；hexo g，生成；hexo d，部署到远程Github仓库<br>20）<a target="_blank" rel="noopener" href="https://xxxxxxxx.github.io/">https://xxxxxxxx.github.io/</a>   (x处替换为自己的Github名字），查看已经更改主题后的博客<br><img src="https://img-blog.csdnimg.cn/2020081123312149.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 
       
 
@@ -299,7 +307,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/post/undefined.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/11/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A%EF%BC%88%E9%99%84%E5%B8%A6%E4%BF%AE%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -313,15 +321,11 @@
   
 <nav id="article-nav">
   
-    <a href="/post/undefined.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          java抽象类的例子，性质，优点
-        
-      </div>
-    </a>
   
+    <a href="/2020/08/11/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A7%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">个人博客搭建方式一览</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -350,8 +354,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/post/undefined.html", 
-    sourceId: "java重写与重载的区别与例子",
+    url: "http://yoursite.com/2020/08/11/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A%EF%BC%88%E9%99%84%E5%B8%A6%E4%BF%AE%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%EF%BC%89/", 
+    sourceId: "Hexo搭建个人博客并部署到GitHub上（附带修改博客主题）",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
