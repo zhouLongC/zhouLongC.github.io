@@ -565,16 +565,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<p>要事先关闭所有已打开的chrome浏览器！！！</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">option = webdriver.ChromeOptions()</span><br><span class="line">option.add_argument(<span class="string">&quot;--user-data-dir=C:\\Users\\Beck\\AppData\\Local\\Google\\Chrome\\User Data&quot;</span>)</span><br><span class="line"><span class="comment">#Chrome浏览器网址栏输入：chrome://version/，在个人资料路径后找到</span></span><br><span class="line">driver = webdriver.Chrome(chrome_options=option)</span><br><span class="line">driver.get(<span class="string">&quot;https://www.cnblogs.com&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<p>经查阅资料得知，网上也确实有此情况的介绍，<br>见《Selenium chromedriver hangs if I specify user-data-dir in Chrome options》:</p>
-<p>“The only one client could be connected to a debugger in one time. So, to fix the issue, when we want to enter to a user profile using a debugger - to avoid chromedriver hangs trying to connect to the debugger, we must close an existing Chrome session”</p>
-<p>翻译为：只有一个客户端可以一次连接到调试器。所以，为了解决这个问题，当我们想要使用调试器进入用户配置文件为了避免chromedriver挂起试图连接到调试器，我们必须关闭一个现有的Chrome会话。</p>
-
+        <p>要事先关闭所有已打开的chrome浏览器！！！</p>
+        
+          <a class="article-more-a" href="/2020/08/12/Python%20chrome_options=option%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95%E6%97%B6%EF%BC%8Cdriver.get%EF%BC%88%EF%BC%89%E5%A4%B1%E6%95%88%E5%8E%9F%E5%9B%A0%E4%B9%8B%E4%B8%80/#more">more >></a>
+        
       
 
       
