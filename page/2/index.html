@@ -152,18 +152,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-STS项目中pom.xml文件有异常的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-java接口回调及接口多个性质的例子" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/12/java%E6%8E%A5%E5%8F%A3%E5%9B%9E%E8%B0%83%E5%8F%8A%E6%8E%A5%E5%8F%A3%E5%A4%9A%E4%B8%AA%E6%80%A7%E8%B4%A8%E7%9A%84%E4%BE%8B%E5%AD%90/">java接口回调及接口多个性质的例子</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/12/java%E6%8E%A5%E5%8F%A3%E5%9B%9E%E8%B0%83%E5%8F%8A%E6%8E%A5%E5%8F%A3%E5%A4%9A%E4%B8%AA%E6%80%A7%E8%B4%A8%E7%9A%84%E4%BE%8B%E5%AD%90/" class="archive-article-date">
+  	<time datetime="2020-08-12T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>方法参考自：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/lobtao/articles/8715260.html">https://www.cnblogs.com/lobtao/articles/8715260.html</a></p>
-<p>1、关闭STS</p>
-<p>2、删除 C:\Users\Administrator.m2 </p>
-<p>3、启动STS</p>
-<p>4、新建项目，让依赖下载完成</p>
-<p>注意：第2步的.m2文件夹要根据自己电脑的情况去找，最简单的办法是在电脑中关键词检索。</p>
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">interface Shape &#123;</span><br><span class="line">    public static final double pi &#x3D; 3.14;&#x2F;&#x2F;public static final可省略</span><br><span class="line">    public abstract double area();&#x2F;&#x2F;public abstract可省略</span><br><span class="line">&#125;</span><br><span class="line">interface another&#123;</span><br><span class="line">    &#x2F;&#x2F;只用来做多继承思想的说明</span><br><span class="line">&#125;</span><br><span class="line">class Circle implements Shape,another&#123;&#x2F;&#x2F;为多继承思想的体现</span><br><span class="line">    double radius;&#x2F;&#x2F;新增变量</span><br><span class="line">    public Circle(double r) &#123;&#x2F;&#x2F;新增方法</span><br><span class="line">        radius &#x3D; r;</span><br><span class="line">    &#125;</span><br><span class="line">    public double area() &#123;&#x2F;&#x2F;实现接口的方法</span><br><span class="line">        return (pi*radius*radius);</span><br><span class="line">        &#x2F;&#x2F;调用接口中的pi常量（可理解为继承过来的）</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Exampleke9 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Circle cir &#x3D; new Circle(2.0);</span><br><span class="line">        System.out.println(&quot;Area of cir &#x3D; &quot;+cir.area());</span><br><span class="line">        Shape shape;&#x2F;&#x2F;声明接口变量</span><br><span class="line">        shape &#x3D; new Circle(2.0);&#x2F;&#x2F;接口变量中存放对象的引用</span><br><span class="line">        System.out.println(&quot;Area of cir &#x3D; &quot;+shape.area());</span><br><span class="line">    &#x2F;&#x2F;shape.area()为接口回调，若多个类implements一个接口,接口回调可以体现多态性</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
 
       
@@ -175,7 +184,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/12/STS%E9%A1%B9%E7%9B%AE%E4%B8%ADpom.xml%E6%96%87%E4%BB%B6%E6%9C%89%E5%BC%82%E5%B8%B8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/12/java%E6%8E%A5%E5%8F%A3%E5%9B%9E%E8%B0%83%E5%8F%8A%E6%8E%A5%E5%8F%A3%E5%A4%9A%E4%B8%AA%E6%80%A7%E8%B4%A8%E7%9A%84%E4%BE%8B%E5%AD%90/">展开全文 >></a>
         </p>
       
 
@@ -205,63 +214,31 @@
 
 
   
-    <article id="post-java抽象类的例子，性质，优点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-java接口的介绍，性质，例子，优点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>抽象类</strong><br>例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">abstract</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">int</span> <span class="title">sub</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> </span>&#123; </span><br><span class="line">      <span class="keyword">return</span> x-y;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>●抽象类的类名前加修饰符abstract，可以包含抽象方法（用abstract修饰，只有方法原型,没有方法的实现），也可以包含非抽象方法，可包含常规类能包含的任何成员;<br>●抽象类是没有具体实例对象的类，不能使用new方法进行实例化,只能用作超<br>类，只有当子类实现了抽象超类中的所有抽象方法，子类才不是抽象类，<br>才能产生实例，如果子类中仍有抽象方法未实现，则子类也只能是抽象类;<br>●只有抽象类才可以包含抽象方法。</p>
-<p><strong>抽象方法的优点：</strong><br>1.隐藏具体细节信息，所有的子类使用的都是相同的方法原型，其中包含了调用该方法时需要了解的全部信息;<br>2.强迫子类完成指定的行为，规定所有子类的标准行为。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/12/java%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BC%98%E7%82%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-个人博客搭建方式一览" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/12/java%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BE%8B%E5%AD%90%EF%BC%8C%E4%BC%98%E7%82%B9/">java接口的介绍，性质，例子，优点</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/12/java%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BE%8B%E5%AD%90%EF%BC%8C%E4%BC%98%E7%82%B9/" class="archive-article-date">
+  	<time datetime="2020-08-12T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://img-blog.csdnimg.cn/20200811202046624.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+        <p>介绍：<br>●接口包括接口声明和接口体，接口体包括常量的定义(必有初值)，方法的声明(无方法体)。<br>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Shape2D</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> pi = <span class="number">3.14</span>;<span class="comment">//public static final可省略</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">double</span> <span class="title">area</span><span class="params">()</span></span>;<span class="comment">//public abstract可省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>性质：<br>●接口可理解为纯抽象类；<br>●接口没有构造方法；<br>●常量（final），方法(public abstract，注意实现类中方法的访问权限为public)；<br>●类实现某一接口要实现此接口的所有方法；<br>●接口的拓展：接口可继承(extends)多个超接口。</p>
+<p>优点：<br>●建立类和类之间的“协议”口将类根据其实现的功能分组用接口代表，而不必顾虑它所在的类继承层次;<br>这样可以最大限度地利用动态绑定，隐藏实现细节;<br>●实现多继承的思想。</p>
 
       
 
@@ -274,7 +251,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/11/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A7%88/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/12/java%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BE%8B%E5%AD%90%EF%BC%8C%E4%BC%98%E7%82%B9/">展开全文 >></a>
         </p>
       
 
@@ -307,6 +284,21 @@
     <article id="post-java重写与重载的区别与例子" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/12/java%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E4%BE%8B%E5%AD%90/">java重写与重载的区别与例子</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/12/java%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E4%BE%8B%E5%AD%90/" class="archive-article-date">
+  	<time datetime="2020-08-12T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <p>首先需要清楚方法头和方法体的概念，其概念如下：<br>方法头： 修饰符+返回类型 +方法名（形参列表）      例如：public static void main(String []args)<br>方法体： { }的内容（包括这两个大括号和内部所有语法）<br><strong>重写</strong>：<strong>与其父类方法方法名、形参列表完全相同；修饰符可以相同，可以不同（但不能降低访问权限）；返回类型可以相同，也可以是父类方法的子类型；方法体的内容不一样；所以可以理解成外壳相似，内部不一样。</strong><br>例如：假设A类有如下方法：</p>
@@ -330,7 +322,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/11/java%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E4%BE%8B%E5%AD%90/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/12/java%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E4%BE%8B%E5%AD%90/">展开全文 >></a>
         </p>
       
 
@@ -360,14 +352,31 @@
 
 
   
-    <article id="post-Java一次性设置窗口中所有组件的字体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-web网站发布：云服务器租用+IIS配置+网页部署到云服务器+用服务器IIS发布网站" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/12/web%E7%BD%91%E7%AB%99%E5%8F%91%E5%B8%83%EF%BC%9A%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%9F%E7%94%A8+IIS%E9%85%8D%E7%BD%AE+%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8+%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8IIS%E5%8F%91%E5%B8%83%E7%BD%91%E7%AB%99/">web网站发布：云服务器租用+IIS配置+网页部署到云服务器+用服务器IIS发布网站</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/12/web%E7%BD%91%E7%AB%99%E5%8F%91%E5%B8%83%EF%BC%9A%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%9F%E7%94%A8+IIS%E9%85%8D%E7%BD%AE+%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8+%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8IIS%E5%8F%91%E5%B8%83%E7%BD%91%E7%AB%99/" class="archive-article-date">
+  	<time datetime="2020-08-12T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>声明：该方法参考自 <a target="_blank" rel="noopener" href="https://codeday.me/bug/20190105/511619.html">codeday</a> ，作者 codeday； 下面结合此方法逻辑写的代码为原创。</p>
-<p>下面只为类中部分必要代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeFont</span><span class="params">(Component component, Font font)</span></span>&#123;</span><br><span class="line">        component.setFont(font);</span><br><span class="line">        <span class="keyword">if</span> (component <span class="keyword">instanceof</span> Container)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (Component child : ((Container)component ).getComponents())</span><br><span class="line">            &#123;</span><br><span class="line">                changeFont(child, font);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">WindowLog</span><span class="params">(String s, <span class="keyword">int</span> x ,<span class="keyword">int</span> y, <span class="keyword">int</span> w, <span class="keyword">int</span> h)</span> </span>&#123;</span><br><span class="line">        setLayout(<span class="keyword">new</span> FlowLayout());</span><br><span class="line">        init(s);</span><br><span class="line">        setLocation(x, y);</span><br><span class="line">        setSize(w, h);</span><br><span class="line">        Font f = <span class="keyword">new</span> Font(<span class="string">&quot;宋体&quot;</span>, Font.PLAIN, <span class="number">20</span>); <span class="comment">//创建字体对象</span></span><br><span class="line">        changeFont(<span class="keyword">this</span>, f); <span class="comment">//将当前窗口和字体对象传入</span></span><br><span class="line">        setVisible(<span class="keyword">true</span>);</span><br><span class="line">        setDefaultCloseOperation(DISPOSE_ON_CLOSE);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+        <p><strong>一、开始前需准备：</strong><br>1.一个包含web项目的文件夹（html、css、js、images等）<br>2.租用服务器的资金（本人选用的是阿里云学生服务器，系统镜像为Windows 2016 数据中心版）如图：</p>
+<p><strong>二、具体步骤：</strong><br>1.打开阿里云（<a target="_blank" rel="noopener" href="https://www.aliyun.com),并登录/">https://www.aliyun.com），并登录</a></p>
+<p>2.找到租用服务器的相关界面，选择自己要租用的服务器，在购买前的配置界面，根据自己的需求做好相应配置（不懂的配置属性可以自己百度查），经过一系列常规操作后，购买完毕。</p>
+<p>3.找到页面顶部标题栏中的“控制台”，并点击<br><img src="https://img-blog.csdnimg.cn/20200528204816194.png" alt="在这里插入图片描述"><br>4.点击自己开通的云产品（以自己开通的云产品为准）<br><img src="https://img-blog.csdnimg.cn/20200528204909428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>5.点击自己的服务器<br><img src="https://img-blog.csdnimg.cn/20200528210305130.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>6.依次点击1、2，按照提示设置”远程连接“密码，<br><img src="https://img-blog.csdnimg.cn/20200528205604528.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>7.<br>再设置服务器密码（为服务器开机时的密码，类似自己电脑开机时输入的密码）<br><img src="https://img-blog.csdnimg.cn/20200528205916942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>8.之后点击”远程连接“，输入”远程连接“密码，再点击圈中命令<br><img src="https://img-blog.csdnimg.cn/20200528210419388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>9.输入”服务器密码“（注意，不是输自己电脑的开机密码！而是第11步时设置的”服务器密码“）<br><img src="https://img-blog.csdnimg.cn/20200528210615959.png" alt="在这里插入图片描述"><br>10.进入成功后，发现服务器界面就像一台刚买的电脑（或者重装后的电脑），经验证，现在初步的服务器已经配置好了<br><img src="https://img-blog.csdnimg.cn/20200528210921997.png" alt="在这里插入图片描述"><br>11.接下来，回到自己的电脑！（注意，不是在服务器界面操作了！）<br>12.在自己电脑底部，搜索”远程桌面连接“<br><img src="https://img-blog.csdnimg.cn/2020052821125694.png" alt="在这里插入图片描述"><br>13.”远程桌面连接“在桌面生成快捷方式（为了以后操作方便）<br><img src="https://img-blog.csdnimg.cn/20200528211346384.png" alt="在这里插入图片描述"><br>14.点击”远程桌面连接“并按要求输入（参照第10步界面的IP地址和账号）<br><img src="https://img-blog.csdnimg.cn/20200528211553333.png" alt="在这里插入图片描述"><br>15.连接成功后，即可得到一个可缩放的服务器界面框<br><img src="https://img-blog.csdnimg.cn/20200528211855253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>16.根据需要，可以Ctrl+C/V实现将文件从自己电脑桌面复制粘贴到服务器桌面<br>17.在服务器桌面底部搜索找到”服务器管理器“，并点击<br><img src="https://img-blog.csdnimg.cn/20200528212155924.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>18.点击圈中选项<br><img src="https://img-blog.csdnimg.cn/20200528212323169.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>19.一直点击”下一步“，直到到达”服务器角色“<br><img src="https://img-blog.csdnimg.cn/20200528212548343.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>20.将Web服务器（IIS）中的后代选项全部选中，直到出现Web服务器（IIS）前面的对号标志（如果自己不了解每个选项，那么全选上就行了，免得之后因为漏装了某个导致找不出错来），期间提示添加功能就添加就行，完成后点下一步<br><img src="https://img-blog.csdnimg.cn/20200528212655814.png" alt="在这里插入图片描述"><br>21.到达”功能“后，这两个选项以及其中后代选项等等全部选中，直到出现前面的对号标志，期间提示添加功能就添加就行，完成后点下一步<br><img src="https://img-blog.csdnimg.cn/2020052821302341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>22.到达”角色服务“后，所有选项全选<br>23.之后点安装，稍等片刻，安装完毕<br>24.在浏览器中输入127.0.0.1如果为此页面则配置成功<br><img src="https://img-blog.csdnimg.cn/20200528214002180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>25.之后在控制面板中搜索找到管理工具，再找到IIS，发送到桌面它的快捷方式<br><img src="https://img-blog.csdnimg.cn/20200528214303410.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>26.接下来打开 IIS，一次点击1、2、3处操作（2之后鼠标右键）<br><img src="https://img-blog.csdnimg.cn/20200528214505822.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>27.点击添加网站后，输入网站名称，接着选择项目文件（第20步中，介绍了如何将项目文件从自己电脑桌面移植到服务器桌面）的物理路径，端口设为80，其他的空不要管，然后回车或点击确定<br><img src="https://img-blog.csdnimg.cn/20200528214710287.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>28.打开自己项目文件的属性,,按如图顺序操作(序号4为输入Everyone，序号5为点击检查名称)<br><img src="https://img-blog.csdnimg.cn/20200528215435940.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>29.之后设置”默认文档“<br><img src="https://img-blog.csdnimg.cn/20200528220207535.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>30.第一个为自己网站的首页，没有就点击添加，添加上首页的名称（带有后缀html）<br><img src="https://img-blog.csdnimg.cn/20200528220338301.png" alt="在这里插入图片描述"><br>31.点击”应用进程池“，在此界面进行如下操作<br><img src="https://img-blog.csdnimg.cn/20200528220554579.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>32.在“高级设置”中，将以下两个属性的默认值调整为以下两个属性值<br><img src="https://img-blog.csdnimg.cn/20200528220805639.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200528220827853.png" alt="在这里插入图片描述"><br>33.浏览网站，检查有无错误<br><img src="https://img-blog.csdnimg.cn/20200528221145726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>34.若网站正常，则可以回到自己电脑的桌面，在浏览器中输入服务器的IP地址，即可跳转到自己通过IIS部署好的网站</p>
+
       
 
       
@@ -379,7 +388,70 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/11/Java%E4%B8%80%E6%AC%A1%E6%80%A7%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AD%97%E4%BD%93/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/12/web%E7%BD%91%E7%AB%99%E5%8F%91%E5%B8%83%EF%BC%9A%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%9F%E7%94%A8+IIS%E9%85%8D%E7%BD%AE+%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8+%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8IIS%E5%8F%91%E5%B8%83%E7%BD%91%E7%AB%99/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-个人博客搭建方式一览" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A7%88/">个人博客搭建方式一览</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A7%88/" class="archive-article-date">
+  	<time datetime="2020-08-12T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://img-blog.csdnimg.cn/20200811202046624.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A7%88/">展开全文 >></a>
         </p>
       
 

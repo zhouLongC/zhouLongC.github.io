@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>zhou_LC个人博客</title>
+  <title>Java一次性设置窗口中所有组件的字体 | zhou_LC个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先需要清楚方法头和方法体的概念，其概念如下：方法头： 修饰符+返回类型 +方法名（形参列表）      例如：public static void main(String []args)方法体： { }的内容（包括这两个大括号和内部所有语法）重写：与其父类方法方法名、形参列表完全相同；修饰符可以相同，可以不同（但不能降低访问权限）；返回类型可以相同，也可以是父类方法的子类型；方法体的内容不一样；">
+  <meta name="description" content="声明：该方法参考自 codeday ，作者 codeday； 下面结合此方法逻辑写的代码为原创。 下面只为类中部分必要代码： 1234567891011121314151617181920212223&#x2F;&#x2F;所用方法public void changeFont(Component component, Font font)&amp;#123;        component.setFont(font);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zhou_LC个人博客">
-<meta property="og:url" content="http://yoursite.com/2020/08/11/java%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E4%BE%8B%E5%AD%90/index.html">
+<meta property="og:title" content="Java一次性设置窗口中所有组件的字体">
+<meta property="og:url" content="http://yoursite.com/2020/08/12/Java%E4%B8%80%E6%AC%A1%E6%80%A7%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AD%97%E4%BD%93/index.html">
 <meta property="og:site_name" content="zhou_LC个人博客">
-<meta property="og:description" content="首先需要清楚方法头和方法体的概念，其概念如下：方法头： 修饰符+返回类型 +方法名（形参列表）      例如：public static void main(String []args)方法体： { }的内容（包括这两个大括号和内部所有语法）重写：与其父类方法方法名、形参列表完全相同；修饰符可以相同，可以不同（但不能降低访问权限）；返回类型可以相同，也可以是父类方法的子类型；方法体的内容不一样；">
+<meta property="og:description" content="声明：该方法参考自 codeday ，作者 codeday； 下面结合此方法逻辑写的代码为原创。 下面只为类中部分必要代码： 1234567891011121314151617181920212223&#x2F;&#x2F;所用方法public void changeFont(Component component, Font font)&amp;#123;        component.setFont(font);">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-11T13:40:46.221Z">
-<meta property="article:modified_time" content="2020-08-12T01:47:53.828Z">
+<meta property="article:published_time" content="2020-08-12T02:22:36.000Z">
+<meta property="article:modified_time" content="2020-08-12T02:31:35.095Z">
 <meta property="article:author" content="zhou_LC">
 <meta name="twitter:card" content="summary">
   
@@ -154,20 +154,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-java重写与重载的区别与例子" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java一次性设置窗口中所有组件的字体" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java一次性设置窗口中所有组件的字体
+    </h1>
+  
+
+        
+        <a href="/2020/08/12/Java%E4%B8%80%E6%AC%A1%E6%80%A7%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AD%97%E4%BD%93/" class="archive-article-date">
+  	<time datetime="2020-08-12T02:22:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>首先需要清楚方法头和方法体的概念，其概念如下：<br>方法头： 修饰符+返回类型 +方法名（形参列表）      例如：public static void main(String []args)<br>方法体： { }的内容（包括这两个大括号和内部所有语法）<br><strong>重写</strong>：<strong>与其父类方法方法名、形参列表完全相同；修饰符可以相同，可以不同（但不能降低访问权限）；返回类型可以相同，也可以是父类方法的子类型；方法体的内容不一样；所以可以理解成外壳相似，内部不一样。</strong><br>例如：假设A类有如下方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void speak(int a)&#123;</span><br><span class="line">    System.out.println(&quot;A&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>声明：该方法参考自 <a target="_blank" rel="noopener" href="https://codeday.me/bug/20190105/511619.html">codeday</a> ，作者 codeday； 下面结合此方法逻辑写的代码为原创。</p>
+<p>下面只为类中部分必要代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeFont</span><span class="params">(Component component, Font font)</span></span>&#123;</span><br><span class="line">        component.setFont(font);</span><br><span class="line">        <span class="keyword">if</span> (component <span class="keyword">instanceof</span> Container)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (Component child : ((Container)component ).getComponents())</span><br><span class="line">            &#123;</span><br><span class="line">                changeFont(child, font);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">WindowLog</span><span class="params">(String s, <span class="keyword">int</span> x ,<span class="keyword">int</span> y, <span class="keyword">int</span> w, <span class="keyword">int</span> h)</span> </span>&#123;</span><br><span class="line">        setLayout(<span class="keyword">new</span> FlowLayout());</span><br><span class="line">        init(s);</span><br><span class="line">        setLocation(x, y);</span><br><span class="line">        setSize(w, h);</span><br><span class="line">        Font f = <span class="keyword">new</span> Font(<span class="string">&quot;宋体&quot;</span>, Font.PLAIN, <span class="number">20</span>); <span class="comment">//创建字体对象</span></span><br><span class="line">        changeFont(<span class="keyword">this</span>, f); <span class="comment">//将当前窗口和字体对象传入</span></span><br><span class="line">        setVisible(<span class="keyword">true</span>);</span><br><span class="line">        setDefaultCloseOperation(DISPOSE_ON_CLOSE);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
 
-<p>B继承于A,如果B中定义一个方法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void speak(int b)&#123;&#x2F;&#x2F;(也可以(public void speak(int a))</span><br><span class="line">    System.out.println(&quot;B&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>则对此个例子来说，称B类的speak方法重写了A类中的speak方法</p>
-<p><strong>重载</strong>：<strong>两个或多个方法的方法头中除方法名相同外，其他都可以不相同，方法体也不相同。</strong><br>例如：有一个方法定义为float add(float a, float b)，然后，再定义一个方法long add(long a, long b)</p>
 
       
 
@@ -247,7 +257,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/11/java%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E4%BE%8B%E5%AD%90/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/12/Java%E4%B8%80%E6%AC%A1%E6%80%A7%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AD%97%E4%BD%93/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -261,18 +271,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/11/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%96%B9%E5%BC%8F%E4%B8%80%E8%A7%88/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/08/12/Java%E4%B8%ADDriverManager.getConnection(uri,%20user,%20password)%E8%BF%94%E5%9B%9Enull%E7%9A%84%E5%8E%9F%E5%9B%A0%E4%B9%8B%E4%B8%80/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          Java中DriverManager.getConnection(uri, user, password)返回null的原因之一
         
       </div>
     </a>
   
   
-    <a href="/2020/08/11/Java%E4%B8%80%E6%AC%A1%E6%80%A7%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AD%97%E4%BD%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2020/08/12/Java%20setContentPane()%E5%92%8CgetContentPane()/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java setContentPane()和getContentPane()</div>
       <i class="icon-circle-right"></i>
     </a>
   
