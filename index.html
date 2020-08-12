@@ -152,18 +152,13 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-0.1-序一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Hexo搭建个人博客并部署到GitHub上（附带修改博客主题）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="序一撒旦发射点发"><a href="#序一撒旦发射点发" class="headerlink" title="序一撒旦发射点发"></a>序一撒旦发射点发</h1><p>人类社会已经进入大数据时代，大数据深刻改变着我们的工作和生活。随着互联网、移动互联网、社交网络等的迅猛发展，各种数量庞大、种类繁多、随时随地产生和更新的大数据，蕴含着前所未有的社会价值和商业价值。大数据成为 21 世纪最为重要的经济资源之一。正如马云所言：未来最大的能源不是石油而是大数据。对大数据的获取、处理与分析，以及基于大数据的智能应用，已成为提高未来竞争力的关键要素。</p>
-<p>但如何获取这些宝贵数据呢？网络爬虫就是一种高效的信息采集利器，利用它可以快速、准确地采集我们想要的各种数据资源。因此，可以说，网络爬虫技术几乎已成为大数据时代 IT 从业者的必修课程。</p>
-<p>我们需要采集的数据大多来源于互联网的各个网站。然而，不同的网站结构不一、布局复杂、渲染方式多样，有的网站还专门采取了一系列 “反爬” 的防范措施。因此，为准确高效地采集到需要的数据，我们需要采取具有针对性的反制措施。网络爬虫与反爬措施是矛与盾的关系，网络爬虫技术就是在这种针锋相对、见招拆招的不断斗争中，逐渐完善和发展起来的。</p>
-<p>本书介绍了利用 Python 3 进行网络爬虫开发的各项技术，从环境配置、理论基础到进阶实战、分布式大规模采集，详细介绍了网络爬虫开发过程中需要了解的知识点，并通过多个案例介绍了不同场景下采用不同爬虫技术实现数据爬取的过程。</p>
-<p>我坚信，每位读者学习和掌握了这些技术之后，成为一个爬虫高手将不再是梦想！</p>
-<p>—— 李舟军，北京航空航天大学教授，博士生导师</p>
-<p>——2017 年 10 月</p>
+        <p>1）安装Node.js<br><img src="https://img-blog.csdnimg.cn/20200811230436725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>2）node -v，查看node版本，npm -v，查看npm版本<br><img src="https://img-blog.csdnimg.cn/20200811230611505.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3）npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org,安装淘宝的cnpm/">http://registry.npm.taobao.org，安装淘宝的cnpm</a> 管理器<br><img src="https://img-blog.csdnimg.cn/20200811230800956.png" alt="在这里插入图片描述"><br>4）cnpm -v，查看cnpm版本<br><img src="https://img-blog.csdnimg.cn/20200811230900447.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>5）cnpm install -g hexo-cli，安装hexo框架<br><img src="https://img-blog.csdnimg.cn/20200811231021521.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>6）hexo -v，查看hexo版本<br><img src="https://img-blog.csdnimg.cn/2020081123111449.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>7）cd d: 进入D盘（此处以D盘为例）mkdir blog，创建blog目录<br><img src="https://img-blog.csdnimg.cn/20200811231519962.png" alt="在这里插入图片描述">8）cd blog，进入blog目录，hexo init，生成博客 初始化博客（若出错，则需先安装Git，安装后命令行输入git，检查Git是否已经配置环境变量）<br><img src="https://img-blog.csdnimg.cn/2020081123161192.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>9）hexo s，启动本地博客服务<br><img src="https://img-blog.csdnimg.cn/20200811231651677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>10）<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E6%9C%AC%E5%9C%B0%E8%AE%BF%E9%97%AE%E5%9C%B0%E5%9D%80">http://localhost:4000/，本地访问地址</a><br>11）hexo n “我的第一篇文章”，创建新的文章<br><img src="https://img-blog.csdnimg.cn/2020081123172279.png" alt="在这里插入图片描述"><br>12）hexo clean，清理；hexo g，生成<br>13）登录Github并创建一个新的仓库 xxxxxxxx.github.io   (x处替换为自己的Github名字）<br>14）cnpm install –save hexo-deployer-git，在blog目录下安装git部署插件<br><img src="https://img-blog.csdnimg.cn/20200811232254590.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>15）配置_config.yml（在blog文件夹中）<br><img src="https://img-blog.csdnimg.cn/20200811232323177.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>16）hexo d，部署到Github仓库里<br><a target="_blank" rel="noopener" href="https://xxxxxxxx.github.io/">https://xxxxxxxx.github.io/</a>   (x处替换为自己的Github名字），访问这个地址可以查看博客</p>
+<p>17）git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia，下载yilia主题到本地<br><img src="https://img-blog.csdnimg.cn/20200811232632598.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>18）修改hexo根目录下的 _config.yml 文件 ： theme: yilia<br>19）hexo clean，清理；hexo g，生成；hexo d，部署到远程Github仓库<br>20）<a target="_blank" rel="noopener" href="https://xxxxxxxx.github.io/">https://xxxxxxxx.github.io/</a>   (x处替换为自己的Github名字），查看已经更改主题后的博客<br><img src="https://img-blog.csdnimg.cn/2020081123312149.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 
       
 
@@ -176,7 +171,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/11/0.1-%E5%BA%8F%E4%B8%80/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/12/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A%EF%BC%88%E9%99%84%E5%B8%A6%E4%BF%AE%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%EF%BC%89/">展开全文 >></a>
         </p>
       
 
@@ -206,55 +201,13 @@
 
 
   
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-java上转型对象的理解，性质，优点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-08-11T13:32:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="为什么写这本书"><a href="#为什么写这本书" class="headerlink" title="为什么写这本书"></a>为什么写这本书</h2><p>在这个大数据时代，尤其是人工智能浪潮兴起的时代，不论是工程领域还是研究领域，数据已经成为必不可少的一部分，而数据的获取很大程度上依赖于爬虫的爬取，所以爬虫也逐渐变得火爆起来。</p>
-<p>我是在 2015 年开始接触爬虫的，当时爬虫其实并没有这么火，我当时觉得能够把想要的数据抓取下来就是一件非常有成就感的事情，而且也可以顺便熟悉 Python，一举两得。在学习期间，我将学到的内容做好总结，发表到博客上。随着我发表的内容越来越多，博客的浏览量也越来越多，很多读者对我的博文给予了肯定的评价，这也给我的爬虫学习之路增添了很多动力。在学习的过程中，困难其实还是非常多的，最早学习时使用的是 Python 2，当时因为编码问题搞得焦头烂额。另外，那时候相关的中文资料还比较少，很多情况下还得自己慢慢去啃官方文档，走了不少弯路。随着学习的进行，我发现爬虫这部分内容涉及的知识点太多、太杂了。网页的结构、渲染方式不同，我们就得换不同的爬取方案来进行针对性的爬取。另外，网页信息的提取、爬取结果的保存也有五花八门的方案。随着移动互联网的兴起，App 的爬取也成了一个热点，而为了提高爬取速度又需要考虑并行爬取、分布式爬取方面的内容，爬虫的通用性、易用性、架构都需要好好优化。这么多杂糅的知识点对于一个爬虫初学者来说，学习的挑战性会非常高，同时学习过程中大家或许也会走我之前走过的弯路，浪费很多时间。后来有一天，图灵的王编辑联系了我，问我有没有意向写一本爬虫方面的书，我听到之后充满了欣喜和期待，这样既能把自己学过的知识点做一个系统整理，又可以跟广大爬虫爱好者分享自己的学习经验，还可以出版自己的作品，于是我很快就答应约稿了。</p>
-<p>一开始觉得写书并不是一件那么难的事，后来真正写了才发现其中包含的艰辛。书相比博客来说，用词的严谨性要高很多，而且逻辑需要更加缜密，很多细节必须考虑得非常周全。前前后后写了大半年的时间，审稿和修改又花费了几个月的时间，一路走来甚是不易，不过最后看到书稿成型，觉得这一切都是值得的。在书中，我把我学习爬虫的很多经验都写了进去。环境配置是学习的第一步，环境配置不好，其他工作就没法开展，甚至可能很大程度上打击学习的积极性，所以我在第 1 章中着重介绍了环境的配置过程。而因为操作系统的不同，环境配置过程又各有不同，所以我把每个系统（Windows、Linux、Mac）的环境配置过程都亲自实践了一遍，并梳理记录下来，希望为各位读者在环境配置时多提供一些帮助。后面我又针对爬虫网站的不同情形分门别类地进行了说明，如 Ajax 分析爬取、动态渲染页面爬取、App 爬取、使用代理爬取、模拟登录爬取等知识，每个知识点我都选取了一些典型案例来说明，以便于读者更好地理解整个过程和用法。为了提高代码编写和爬取的效率，还可以使用一些爬虫框架辅助爬取，所以本书后面又介绍了两个流行的爬虫框架的用法，最后又介绍了一些分布式爬虫及部署方面的知识。总体来说，本书根据我个人觉得比较理想的学习路径介绍了学习爬虫的相关知识，并通过一些实战案例帮助读者更好地理解其中的原理。</p>
-<h2 id="本书内容"><a href="#本书内容" class="headerlink" title="本书内容"></a>本书内容</h2><p>本书一共分为 15 章，归纳如下。</p>
-<p>第 1 章介绍了本书所涉及的所有环境的配置详细流程，兼顾 Windows、Linux、Mac 三大平台。本章不用逐节阅读，需要的时候查阅即可。</p>
-<p>第 2 章介绍了学习爬虫之前需要了解的基础知识，如 HTTP、爬虫、代理的基本原理、网页基本结构等内容，对爬虫没有任何了解的读者建议好好了解这一章的知识。</p>
-<p>第 3 章介绍了最基本的爬虫操作，一般学习爬虫都是从这一步学起的。这一章介绍了最基本的两个请求库（urllib 和 requests）和正则表达式的基本用法。学会了这一章，就可以掌握最基本的爬虫技术了。</p>
-<p>第 4 章介绍了页解析库的基本用法，包括 Beautiful Soup、XPath、pyquery 的基本使用方法，它们可以使得信息的提取更加方便、快捷，是爬虫必备利器。</p>
-<p>第 5 章介绍了数据存储的常见形式及存储操作，包括 TXT、JSON、CSV 各种文件的存储，以及关系型数据库 MySQL 和非关系型数据库 MongoDB、Redis 存储的基本存储操作。学会了这些内容，我们可以灵活方便地保存爬取下来的数据。</p>
-<p>第 6 章介绍了 Ajax 数据爬取的过程，一些网页的数据可能是通过 Ajax 请求 API 接口的方式加载的，用常规方法无法爬取，本章介绍了使用 Ajax 进行数据爬取的方法。</p>
-<p>第 7 章介绍了动态渲染页面的爬取，现在越来越多的网站内容是经过 JavaScript 渲染得到的，而原始 HTML 文本可能不包含任何有效内容，而且渲染过程可能涉及某些 JavaScript 加密算法，可以使用 Selenium、Splash 等工具来实现模拟浏览器进行数据爬取的方法。</p>
-<p>第 8 章介绍了验证码的相关处理方法。验证码是网站反爬虫的重要措施，我们可以通过本章了解到各类验证码的应对方案，包括图形验证码、极验验证码、点触验证码、微博宫格验证码的识别。</p>
-<p>第 9 章介绍了代理的使用方法，限制 IP 的访问也是网站反爬虫的重要措施。另外，我们也可以使用代理来伪装爬虫的真实 IP，使用代理可以有效解决这个问题。通过本章，我们了解到代理的使用方法，还学习了代理池的维护方法，以及 ADSL 拨号代理的使用方法。</p>
-<p>第 10 章介绍了模拟登录爬取的方法，某些网站需要登录才可以看到需要的内容，这时就需要用爬虫模拟登录网站再进行爬取了。本章介绍了最基本的模拟登录方法以及维护一个 Cookies 池的方法。</p>
-<p>第 11 章介绍了 App 的爬取方法，包括基本的 Charles、mitmproxy 抓包软件的使用。此外，还介绍了 mitmdump 对接 Python 脚本进行实时抓取的方法，以及使用 Appium 完全模拟手机 App 的操作进行爬取的方法。</p>
-<p>第 12 章介绍了 pyspider 爬虫框架及用法，该框架简洁易用、功能强大，可以节省大量开发爬虫的时间。本章结合案例介绍了使用该框架进行爬虫开发的方法。</p>
-<p>第 13 章介绍了 Scrapy 爬虫框架及用法。Scrapy 是目前使用最广泛的爬虫框架，本章介绍了它的基本架构、原理及各个组件的使用方法，另外还介绍了 Scrapy 通用化配置、对接 Docker 的一些方法。</p>
-<p>第 14 章介绍了分布式爬虫的基本原理及实现方法。为了提高爬取效率，分布式爬虫是必不可少的，本章介绍了使用 Scrapy 和 Redis 实现分布式爬虫的方法。</p>
-<p>第 15 章介绍了分布式爬虫的部署及管理方法。方便快速地完成爬虫的分布式部署，可以节省开发者大量的时间。本章结合 Scrapy、Scrapyd、Docker、Gerapy 等工具介绍了分布式爬虫部署和管理的实现。</p>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>感谢我的父母、导师，没有他们创造的环境，我不可能完成此书的写作。</p>
-<p>感谢在我学习过程中与我探讨技术的各位朋友，特别感谢汪海洋先生在我初学爬虫过程中给我提供的指导，特别感谢崔弦毅、苟桃、时猛先生在我写书过程中为我提供的思路和建议。感谢李园女士为本书设计了封面。</p>
-<p>感谢为本书撰写推荐语的李舟军老师、宋睿华老师、梁斌老师、施水才老师（排名不分先后），感谢你们对本书的支持和推荐。</p>
-<p>感谢王军花、陈兴璐编辑，在书稿的审核过程中给我提供了非常多的建议，没有你们的策划和敦促，我也难以顺利完成此书。</p>
-<p>感谢为本书做出贡献的每一个人！</p>
-<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p>本书中的所有代码都放在了 GitHub，详见 <a target="_blank" rel="noopener" href="https://github.com/Python3WebSpider">https://github.com/Python3WebSpider</a>，书中每个实例对应的章节末也有说明。</p>
-<p>由于本人水平有限，写作过程中难免存在一些错误和不足之处，恳请广大读者批评指正。如果发现错误，可以将其提交到图灵社区本书主页 <a target="_blank" rel="noopener" href="http://www.ituring.com.cn/book/2003%EF%BC%8C%E4%BB%A5%E4%BD%BF%E6%9C%AC%E4%B9%A6%E6%9B%B4%E5%8A%A0%E5%AE%8C%E5%96%84%EF%BC%8C%E9%9D%9E%E5%B8%B8%E6%84%9F%E8%B0%A2%EF%BC%81">http://www.ituring.com.cn/book/2003，以使本书更加完善，非常感谢！</a></p>
-<p>另外，本书还设有专门的读者交流群，可以搜索 “进击的 Coder” 微信公众号获取，欢迎各位读者加入！</p>
-<p>—— 崔庆才</p>
-<p>——2018 年 1 月</p>
+        <p>理解：<br>若<strong>A类是B类的父类</strong>，当用子类（B类）创建一个对象b，并把此对象的引用赋值给父类（A类）的对象a中时，称<strong>对象a是对象b的上转型对象</strong>。<br>例如:    <strong>A a = new A();        a = new B();</strong></p>
+<p>性质：<br>●上转型对象<strong>可以访问子类继承</strong>的成员变量或成员方法<strong>也可以访问子类重写</strong>的成员方法，但<strong>不能操纵子类新增</strong>的成员变量或成员方法。<br>●可以将上转型对象强制转回为子类对象。<br><img src="https://img-blog.csdnimg.cn/20200417093146328.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>优点：<br>方便面向接口的编程思想和面向抽象的编程思想，（上转型对象可理解为树的主干，其每个子类可理解为树枝）。</p>
 
       
 
@@ -267,7 +220,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/12/java%E4%B8%8A%E8%BD%AC%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BC%98%E7%82%B9/">展开全文 >></a>
         </p>
       
 
@@ -297,39 +250,15 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-java接口的介绍，性质，例子，优点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/11/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/11/hello-world/" class="archive-article-date">
-  	<time datetime="2020-08-11T13:22:54.124Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <p>介绍：<br>●接口包括接口声明和接口体，接口体包括常量的定义(必有初值)，方法的声明(无方法体)。<br>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Shape2D</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> pi = <span class="number">3.14</span>;<span class="comment">//public static final可省略</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">double</span> <span class="title">area</span><span class="params">()</span></span>;<span class="comment">//public abstract可省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>性质：<br>●接口可理解为纯抽象类；<br>●接口没有构造方法；<br>●常量（final），方法(public abstract，注意实现类中方法的访问权限为public)；<br>●类实现某一接口要实现此接口的所有方法；<br>●接口的拓展：接口可继承(extends)多个超接口。</p>
+<p>优点：<br>●建立类和类之间的“协议”口将类根据其实现的功能分组用接口代表，而不必顾虑它所在的类继承层次;<br>这样可以最大限度地利用动态绑定，隐藏实现细节;<br>●实现多继承的思想。</p>
 
       
 
@@ -342,7 +271,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/11/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/12/java%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BE%8B%E5%AD%90%EF%BC%8C%E4%BC%98%E7%82%B9/">展开全文 >></a>
         </p>
       
 
@@ -372,6 +301,364 @@
 
 
   
+    <article id="post-java接口回调及接口多个性质的例子" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> pi = <span class="number">3.14</span>;<span class="comment">//public static final可省略</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">double</span> <span class="title">area</span><span class="params">()</span></span>;<span class="comment">//public abstract可省略</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">another</span></span>&#123;</span><br><span class="line">    <span class="comment">//只用来做多继承思想的说明</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> <span class="keyword">implements</span> <span class="title">Shape</span>,<span class="title">another</span></span>&#123;<span class="comment">//为多继承思想的体现</span></span><br><span class="line">    <span class="keyword">double</span> radius;<span class="comment">//新增变量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Circle</span><span class="params">(<span class="keyword">double</span> r)</span> </span>&#123;<span class="comment">//新增方法</span></span><br><span class="line">        radius = r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">area</span><span class="params">()</span> </span>&#123;<span class="comment">//实现接口的方法</span></span><br><span class="line">        <span class="keyword">return</span> (pi*radius*radius);</span><br><span class="line">        <span class="comment">//调用接口中的pi常量（可理解为继承过来的）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Exampleke9</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Circle cir = <span class="keyword">new</span> Circle(<span class="number">2.0</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;Area of cir = &quot;</span>+cir.area());</span><br><span class="line">        Shape shape;<span class="comment">//声明接口变量</span></span><br><span class="line">        shape = <span class="keyword">new</span> Circle(<span class="number">2.0</span>);<span class="comment">//接口变量中存放对象的引用</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Area of cir = &quot;</span>+shape.area());</span><br><span class="line">    <span class="comment">//shape.area()为接口回调，若多个类implements一个接口,接口回调可以体现多态性</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/java%E6%8E%A5%E5%8F%A3%E5%9B%9E%E8%B0%83%E5%8F%8A%E6%8E%A5%E5%8F%A3%E5%A4%9A%E4%B8%AA%E6%80%A7%E8%B4%A8%E7%9A%84%E4%BE%8B%E5%AD%90/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java setContentPane()和getContentPane()" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于setContentPane()和getContentPane()的应用</p>
+<p>JFrame不能用add方法直接添加组件。</p>
+<p>　　JFrame 有一个 Content Pane，窗口能显示的所有组件都是添加在这个 Content Pane 中。JFrame 提供了两个方法：getContentPane 和 setContentPane 就是用于获取和设置其 Content Pane 的。</p>
+<p>　　对JFrame添加组件有两种方式：<br>　　1)用getContentPane()方法获得JFrame的内容面板，再对其加入组件：frame.getContentPane().add(childComponent)</p>
+<p>　　2)建立一个Jpanel或JDesktopPane类的中间容器，把组件添加到容器中，用setContentPane()方法把该容器置为JFrame的内容面板：</p>
+<p>　　　　JPanel  contentPane=new  JPanel();<br>　　　　……//把其它组件添加到Jpanel中;<br>　　　　frame.setContentPane(contentPane);<br>　　　　//把contentPane对象设置成为frame的内容面板</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/Java%20setContentPane()%E5%92%8CgetContentPane()/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JavaScript全局变量、局部变量的表示方法与例子" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>全局变量</strong>有两种表示方法：1.在函数外定义的变量；2.在函数内但没有使用 var 关键字声明的变量。</p>
+<p>表示法1例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> carName = <span class="string">&quot; Volvo&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 函数内可调用 carName 变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>表示法2例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    carName = <span class="string">&quot;Volvo&quot;</span>;</span><br><span class="line">    <span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注：1）全局变量有全局作用域: 网页中所有脚本和函数均可使用。<br>    2）全局变量在 HTML 中都属于window对象。<br>    3）全局变量可以覆盖 window 对象的变量或者函数。<br><strong>局部变量</strong>：在函数内使用 var 关键字声明的变量。<br>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里不能使用 carName 变量</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> carName = <span class="string">&quot;Volvo&quot;</span>;</span><br><span class="line">    <span class="comment">// 这里可以使用 carName 变量</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 这里不能使用 carName 变量</span></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/JavaScript%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E3%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95%E4%B8%8E%E4%BE%8B%E5%AD%90/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Python chrome_options=option设置用户自己的数据目录时，driver.get（）失效原因之一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">option = webdriver.ChromeOptions()</span><br><span class="line">option.add_argument(<span class="string">&quot;--user-data-dir=C:\\Users\\Beck\\AppData\\Local\\Google\\Chrome\\User Data&quot;</span>)</span><br><span class="line"><span class="comment">#Chrome浏览器网址栏输入：chrome://version/，在个人资料路径后找到</span></span><br><span class="line">driver = webdriver.Chrome(chrome_options=option)</span><br><span class="line">driver.get(<span class="string">&quot;https://www.cnblogs.com&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>要事先关闭所有已打开的chrome浏览器！！！<br>经查阅资料得知，网上也确实有此情况的介绍，<br>见《Selenium chromedriver hangs if I specify user-data-dir in Chrome options》:</p>
+<p>“The only one client could be connected to a debugger in one time. So, to fix the issue, when we want to enter to a user profile using a debugger - to avoid chromedriver hangs trying to connect to the debugger, we must close an existing Chrome session”</p>
+<p>翻译为：只有一个客户端可以一次连接到调试器。所以，为了解决这个问题，当我们想要使用调试器进入用户配置文件为了避免chromedriver挂起试图连接到调试器，我们必须关闭一个现有的Chrome会话。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/Python%20chrome_options=option%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95%E6%97%B6%EF%BC%8Cdriver.get%EF%BC%88%EF%BC%89%E5%A4%B1%E6%95%88%E5%8E%9F%E5%9B%A0%E4%B9%8B%E4%B8%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-web网站发布：云服务器租用+IIS配置+网页部署到云服务器+用服务器IIS发布网站" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>一、开始前需准备：</strong><br>1.一个包含web项目的文件夹（html、css、js、images等）<br>2.租用服务器的资金（本人选用的是阿里云学生服务器，系统镜像为Windows 2016 数据中心版）如图：</p>
+<p><strong>二、具体步骤：</strong><br>1.打开阿里云（<a target="_blank" rel="noopener" href="https://www.aliyun.com),并登录/">https://www.aliyun.com），并登录</a></p>
+<p>2.找到租用服务器的相关界面，选择自己要租用的服务器，在购买前的配置界面，根据自己的需求做好相应配置（不懂的配置属性可以自己百度查），经过一系列常规操作后，购买完毕。</p>
+<p>3.找到页面顶部标题栏中的“控制台”，并点击<br><img src="https://img-blog.csdnimg.cn/20200528204816194.png" alt="在这里插入图片描述"><br>4.点击自己开通的云产品（以自己开通的云产品为准）<br><img src="https://img-blog.csdnimg.cn/20200528204909428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>5.点击自己的服务器<br><img src="https://img-blog.csdnimg.cn/20200528210305130.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>6.依次点击1、2，按照提示设置”远程连接“密码，<br><img src="https://img-blog.csdnimg.cn/20200528205604528.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>7.<br>再设置服务器密码（为服务器开机时的密码，类似自己电脑开机时输入的密码）<br><img src="https://img-blog.csdnimg.cn/20200528205916942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>8.之后点击”远程连接“，输入”远程连接“密码，再点击圈中命令<br><img src="https://img-blog.csdnimg.cn/20200528210419388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>9.输入”服务器密码“（注意，不是输自己电脑的开机密码！而是第11步时设置的”服务器密码“）<br><img src="https://img-blog.csdnimg.cn/20200528210615959.png" alt="在这里插入图片描述"><br>10.进入成功后，发现服务器界面就像一台刚买的电脑（或者重装后的电脑），经验证，现在初步的服务器已经配置好了<br><img src="https://img-blog.csdnimg.cn/20200528210921997.png" alt="在这里插入图片描述"><br>11.接下来，回到自己的电脑！（注意，不是在服务器界面操作了！）<br>12.在自己电脑底部，搜索”远程桌面连接“<br><img src="https://img-blog.csdnimg.cn/2020052821125694.png" alt="在这里插入图片描述"><br>13.”远程桌面连接“在桌面生成快捷方式（为了以后操作方便）<br><img src="https://img-blog.csdnimg.cn/20200528211346384.png" alt="在这里插入图片描述"><br>14.点击”远程桌面连接“并按要求输入（参照第10步界面的IP地址和账号）<br><img src="https://img-blog.csdnimg.cn/20200528211553333.png" alt="在这里插入图片描述"><br>15.连接成功后，即可得到一个可缩放的服务器界面框<br><img src="https://img-blog.csdnimg.cn/20200528211855253.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>16.根据需要，可以Ctrl+C/V实现将文件从自己电脑桌面复制粘贴到服务器桌面<br>17.在服务器桌面底部搜索找到”服务器管理器“，并点击<br><img src="https://img-blog.csdnimg.cn/20200528212155924.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>18.点击圈中选项<br><img src="https://img-blog.csdnimg.cn/20200528212323169.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>19.一直点击”下一步“，直到到达”服务器角色“<br><img src="https://img-blog.csdnimg.cn/20200528212548343.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>20.将Web服务器（IIS）中的后代选项全部选中，直到出现Web服务器（IIS）前面的对号标志（如果自己不了解每个选项，那么全选上就行了，免得之后因为漏装了某个导致找不出错来），期间提示添加功能就添加就行，完成后点下一步<br><img src="https://img-blog.csdnimg.cn/20200528212655814.png" alt="在这里插入图片描述"><br>21.到达”功能“后，这两个选项以及其中后代选项等等全部选中，直到出现前面的对号标志，期间提示添加功能就添加就行，完成后点下一步<br><img src="https://img-blog.csdnimg.cn/2020052821302341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>22.到达”角色服务“后，所有选项全选<br>23.之后点安装，稍等片刻，安装完毕<br>24.在浏览器中输入127.0.0.1如果为此页面则配置成功<br><img src="https://img-blog.csdnimg.cn/20200528214002180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>25.之后在控制面板中搜索找到管理工具，再找到IIS，发送到桌面它的快捷方式<br><img src="https://img-blog.csdnimg.cn/20200528214303410.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>26.接下来打开 IIS，一次点击1、2、3处操作（2之后鼠标右键）<br><img src="https://img-blog.csdnimg.cn/20200528214505822.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>27.点击添加网站后，输入网站名称，接着选择项目文件（第20步中，介绍了如何将项目文件从自己电脑桌面移植到服务器桌面）的物理路径，端口设为80，其他的空不要管，然后回车或点击确定<br><img src="https://img-blog.csdnimg.cn/20200528214710287.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>28.打开自己项目文件的属性,,按如图顺序操作(序号4为输入Everyone，序号5为点击检查名称)<br><img src="https://img-blog.csdnimg.cn/20200528215435940.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>29.之后设置”默认文档“<br><img src="https://img-blog.csdnimg.cn/20200528220207535.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>30.第一个为自己网站的首页，没有就点击添加，添加上首页的名称（带有后缀html）<br><img src="https://img-blog.csdnimg.cn/20200528220338301.png" alt="在这里插入图片描述"><br>31.点击”应用进程池“，在此界面进行如下操作<br><img src="https://img-blog.csdnimg.cn/20200528220554579.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>32.在“高级设置”中，将以下两个属性的默认值调整为以下两个属性值<br><img src="https://img-blog.csdnimg.cn/20200528220805639.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200528220827853.png" alt="在这里插入图片描述"><br>33.浏览网站，检查有无错误<br><img src="https://img-blog.csdnimg.cn/20200528221145726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>34.若网站正常，则可以回到自己电脑的桌面，在浏览器中输入服务器的IP地址，即可跳转到自己通过IIS部署好的网站</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/web%E7%BD%91%E7%AB%99%E5%8F%91%E5%B8%83%EF%BC%9A%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%9F%E7%94%A8+IIS%E9%85%8D%E7%BD%AE+%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8+%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8IIS%E5%8F%91%E5%B8%83%E7%BD%91%E7%AB%99/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java中DriverManager.getConnection(uri, user, password)返回null的原因之一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>解决方法：<br>检查MySQL、JDBC-MySQL数据库驱动版本是否对应。</strong></p>
+<p>例子：<br>（1）环境：mysql-8.0.20-winx64 + mysql-connector-java-5.1.40 +适用于mysql-5.7.15-winx64的Java代码<br><img src="https://img-blog.csdnimg.cn/20200616000926396.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>（2）环境：mysql-5.7.15-winx64 + mysql-connector-java-5.1.40 +适用于mysql-5.7.15-winx64的Java代码<br><img src="https://img-blog.csdnimg.cn/20200616001017668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>（3）环境：mysql-5.7.15-winx64 + mysql-connector-java-8.0.19 +适用于mysql-5.7.15-winx64的Java代码（若为另一种环境，即mysql-8.0.20-winx64 + mysql-connector-java-8.0.19 +适用于mysql-5.7.15-winx64的Java代码，则报错情况相同）<br><img src="https://img-blog.csdnimg.cn/20200616001141774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>结论1</strong>：<br>由例子（1）、（2）、（3）知只有MySQL的版本、JDBC-MySQL数据库驱动的版本、Java语句的对应版本适用性都对应的情况下（如例子（2）），对于此题情况来说，JDBC-MySQL驱动才能正常加载，DriverManager.getConnection(uri, user, password)才不会返回null，继而与数据库建立的连接才能正常建立。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/Java%E4%B8%ADDriverManager.getConnection(uri,%20user,%20password)%E8%BF%94%E5%9B%9Enull%E7%9A%84%E5%8E%9F%E5%9B%A0%E4%B9%8B%E4%B8%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java中InetAddress类对于主机域名及IP地址的返回测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            InetAddress address_1 = InetAddress.getByName(<span class="string">&quot;www.sina.com.cn&quot;</span>); <span class="comment">//新浪的域名</span></span><br><span class="line">            System.out.println(address_1.toString());</span><br><span class="line">            System.out.println(address_1.getHostName());</span><br><span class="line">            System.out.println(address_1.getHostAddress());</span><br><span class="line">            </span><br><span class="line">            System.out.println(<span class="string">&quot;************&quot;</span>);</span><br><span class="line">            </span><br><span class="line">            InetAddress address_2 = InetAddress.getByName(<span class="string">&quot;39.156.66.18&quot;</span>); <span class="comment">//百度的IP</span></span><br><span class="line">            System.out.println(address_2.toString());</span><br><span class="line">            System.out.println(address_2.getHostName());</span><br><span class="line">            System.out.println(address_2.getHostAddress());</span><br><span class="line">            </span><br><span class="line">            System.out.println(<span class="string">&quot;************&quot;</span>);</span><br><span class="line">            </span><br><span class="line">            InetAddress address_3 = InetAddress.getByName(<span class="string">&quot;www.baidu.com&quot;</span>); <span class="comment">//百度的域名</span></span><br><span class="line">            System.out.println(address_3.toString());</span><br><span class="line">            System.out.println(address_3.getHostName());</span><br><span class="line">            System.out.println(address_3.getHostAddress());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span>(UnknownHostException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;无法找到www.sina.com.cn&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出：</span></span><br><span class="line"><span class="comment">//www.sina.com.cn/120.192.83.98</span></span><br><span class="line"><span class="comment">//www.sina.com.cn</span></span><br><span class="line"><span class="comment">//120.192.83.98</span></span><br><span class="line"><span class="comment">//************</span></span><br><span class="line"><span class="comment">///39.156.66.18</span></span><br><span class="line"><span class="comment">//39.156.66.18</span></span><br><span class="line"><span class="comment">//39.156.66.18</span></span><br><span class="line"><span class="comment">//************</span></span><br><span class="line"><span class="comment">//www.baidu.com/39.156.66.18</span></span><br><span class="line"><span class="comment">//www.baidu.com</span></span><br><span class="line"><span class="comment">//39.156.66.18</span></span><br></pre></td></tr></table></figure>
+
+<p>综上，如果这个InetAddress是用主机名创建的，那么将记住并返回该主机名；否则它将返回IP地址的文本表示。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/Java%E4%B8%ADInetAddress%E7%B1%BB%E5%AF%B9%E4%BA%8E%E4%B8%BB%E6%9C%BA%E5%9F%9F%E5%90%8D%E5%8F%8AIP%E5%9C%B0%E5%9D%80%E7%9A%84%E8%BF%94%E5%9B%9E%E6%B5%8B%E8%AF%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
