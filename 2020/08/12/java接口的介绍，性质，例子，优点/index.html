@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>java接口的介绍，性质，例子，优点 | zhou_LC个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="介绍：●接口包括接口声明和接口体，接口体包括常量的定义(必有初值)，方法的声明(无方法体)。例如： 1234interface Shape2D &amp;#123;    public static final double pi &#x3D; 3.14;&#x2F;&#x2F;public static final可省略    public abstract double area();&#x2F;&#x2F;public abstract可省略&amp;#1">
+  <meta name="description" content="介绍：●接口包括接口声明和接口体，接口体包括常量的定义(必有初值)，方法的声明(无方法体)。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java接口的介绍，性质，例子，优点">
 <meta property="og:url" content="http://yoursite.com/2020/08/12/java%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BB%8B%E7%BB%8D%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BE%8B%E5%AD%90%EF%BC%8C%E4%BC%98%E7%82%B9/index.html">
 <meta property="og:site_name" content="zhou_LC个人博客">
-<meta property="og:description" content="介绍：●接口包括接口声明和接口体，接口体包括常量的定义(必有初值)，方法的声明(无方法体)。例如： 1234interface Shape2D &amp;#123;    public static final double pi &#x3D; 3.14;&#x2F;&#x2F;public static final可省略    public abstract double area();&#x2F;&#x2F;public abstract可省略&amp;#1">
+<meta property="og:description" content="介绍：●接口包括接口声明和接口体，接口体包括常量的定义(必有初值)，方法的声明(无方法体)。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-12T02:22:36.000Z">
-<meta property="article:modified_time" content="2020-08-12T02:26:25.022Z">
+<meta property="article:modified_time" content="2020-08-12T03:29:18.332Z">
 <meta property="article:author" content="zhou_LC">
 <meta name="twitter:card" content="summary">
   
@@ -174,7 +174,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>介绍：<br>●接口包括接口声明和接口体，接口体包括常量的定义(必有初值)，方法的声明(无方法体)。<br>例如：</p>
+        <p>介绍：<br>●接口包括接口声明和接口体，接口体包括常量的定义(必有初值)，方法的声明(无方法体)。</p>
+<a id="more"></a>
+
+<p>例如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Shape2D</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> pi = <span class="number">3.14</span>;<span class="comment">//public static final可省略</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">double</span> <span class="title">area</span><span class="params">()</span></span>;<span class="comment">//public abstract可省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>性质：<br>●接口可理解为纯抽象类；<br>●接口没有构造方法；<br>●常量（final），方法(public abstract，注意实现类中方法的访问权限为public)；<br>●类实现某一接口要实现此接口的所有方法；<br>●接口的拓展：接口可继承(extends)多个超接口。</p>

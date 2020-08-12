@@ -239,11 +239,10 @@
       
         <p>关于setContentPane()和getContentPane()的应用</p>
 <p>JFrame不能用add方法直接添加组件。</p>
-<p>　　JFrame 有一个 Content Pane，窗口能显示的所有组件都是添加在这个 Content Pane 中。JFrame 提供了两个方法：getContentPane 和 setContentPane 就是用于获取和设置其 Content Pane 的。</p>
-<p>　　对JFrame添加组件有两种方式：<br>　　1)用getContentPane()方法获得JFrame的内容面板，再对其加入组件：frame.getContentPane().add(childComponent)</p>
-<p>　　2)建立一个Jpanel或JDesktopPane类的中间容器，把组件添加到容器中，用setContentPane()方法把该容器置为JFrame的内容面板：</p>
-<p>　　　　JPanel  contentPane=new  JPanel();<br>　　　　……//把其它组件添加到Jpanel中;<br>　　　　frame.setContentPane(contentPane);<br>　　　　//把contentPane对象设置成为frame的内容面板</p>
-
+<p>　　JFrame 有一个 Content Pane，窗口能显示的所有组件都是添加在这个 Content Pane 中。</p>
+        
+          <a class="article-more-a" href="/2020/08/12/Java%20setContentPane()%E5%92%8CgetContentPane()/#more">more >></a>
+        
       
 
       
@@ -307,9 +306,9 @@
       
         <p>声明：该方法参考自 <a target="_blank" rel="noopener" href="https://codeday.me/bug/20190105/511619.html">codeday</a> ，作者 codeday； 下面结合此方法逻辑写的代码为原创。</p>
 <p>下面只为类中部分必要代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeFont</span><span class="params">(Component component, Font font)</span></span>&#123;</span><br><span class="line">        component.setFont(font);</span><br><span class="line">        <span class="keyword">if</span> (component <span class="keyword">instanceof</span> Container)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (Component child : ((Container)component ).getComponents())</span><br><span class="line">            &#123;</span><br><span class="line">                changeFont(child, font);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">WindowLog</span><span class="params">(String s, <span class="keyword">int</span> x ,<span class="keyword">int</span> y, <span class="keyword">int</span> w, <span class="keyword">int</span> h)</span> </span>&#123;</span><br><span class="line">        setLayout(<span class="keyword">new</span> FlowLayout());</span><br><span class="line">        init(s);</span><br><span class="line">        setLocation(x, y);</span><br><span class="line">        setSize(w, h);</span><br><span class="line">        Font f = <span class="keyword">new</span> Font(<span class="string">&quot;宋体&quot;</span>, Font.PLAIN, <span class="number">20</span>); <span class="comment">//创建字体对象</span></span><br><span class="line">        changeFont(<span class="keyword">this</span>, f); <span class="comment">//将当前窗口和字体对象传入</span></span><br><span class="line">        setVisible(<span class="keyword">true</span>);</span><br><span class="line">        setDefaultCloseOperation(DISPOSE_ON_CLOSE);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/2020/08/12/Java%E4%B8%80%E6%AC%A1%E6%80%A7%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%80%E6%9C%89%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AD%97%E4%BD%93/#more">more >></a>
+        
       
 
       
@@ -372,16 +371,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>全局变量</strong>有两种表示方法：1.在函数外定义的变量；2.在函数内但没有使用 var 关键字声明的变量。</p>
-<p>表示法1例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> carName = <span class="string">&quot; Volvo&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 函数内可调用 carName 变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>表示法2例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    carName = <span class="string">&quot;Volvo&quot;</span>;</span><br><span class="line">    <span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注：1）全局变量有全局作用域: 网页中所有脚本和函数均可使用。<br>    2）全局变量在 HTML 中都属于window对象。<br>    3）全局变量可以覆盖 window 对象的变量或者函数。<br><strong>局部变量</strong>：在函数内使用 var 关键字声明的变量。<br>例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里不能使用 carName 变量</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> carName = <span class="string">&quot;Volvo&quot;</span>;</span><br><span class="line">    <span class="comment">// 这里可以使用 carName 变量</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 这里不能使用 carName 变量</span></span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/2020/08/12/JavaScript%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E3%80%81%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95%E4%B8%8E%E4%BE%8B%E5%AD%90/#more">more >></a>
+        
       
 
       
@@ -444,8 +436,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>解决方法：<br>检查MySQL、JDBC-MySQL数据库驱动版本是否对应。</strong></p>
-<p>例子：<br>（1）环境：mysql-8.0.20-winx64 + mysql-connector-java-5.1.40 +适用于mysql-5.7.15-winx64的Java代码<br><img src="https://img-blog.csdnimg.cn/20200616000926396.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>（2）环境：mysql-5.7.15-winx64 + mysql-connector-java-5.1.40 +适用于mysql-5.7.15-winx64的Java代码<br><img src="https://img-blog.csdnimg.cn/20200616001017668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>（3）环境：mysql-5.7.15-winx64 + mysql-connector-java-8.0.19 +适用于mysql-5.7.15-winx64的Java代码（若为另一种环境，即mysql-8.0.20-winx64 + mysql-connector-java-8.0.19 +适用于mysql-5.7.15-winx64的Java代码，则报错情况相同）<br><img src="https://img-blog.csdnimg.cn/20200616001141774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>结论1</strong>：<br>由例子（1）、（2）、（3）知只有MySQL的版本、JDBC-MySQL数据库驱动的版本、Java语句的对应版本适用性都对应的情况下（如例子（2）），对于此题情况来说，JDBC-MySQL驱动才能正常加载，DriverManager.getConnection(uri, user, password)才不会返回null，继而与数据库建立的连接才能正常建立。</p>
-
+        
+          <a class="article-more-a" href="/2020/08/12/Java%E4%B8%ADDriverManager.getConnection(uri,%20user,%20password)%E8%BF%94%E5%9B%9Enull%E7%9A%84%E5%8E%9F%E5%9B%A0%E4%B9%8B%E4%B8%80/#more">more >></a>
+        
       
 
       
@@ -507,10 +500,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            InetAddress address_1 = InetAddress.getByName(<span class="string">&quot;www.sina.com.cn&quot;</span>); <span class="comment">//新浪的域名</span></span><br><span class="line">            System.out.println(address_1.toString());</span><br><span class="line">            System.out.println(address_1.getHostName());</span><br><span class="line">            System.out.println(address_1.getHostAddress());</span><br><span class="line">            </span><br><span class="line">            System.out.println(<span class="string">&quot;************&quot;</span>);</span><br><span class="line">            </span><br><span class="line">            InetAddress address_2 = InetAddress.getByName(<span class="string">&quot;39.156.66.18&quot;</span>); <span class="comment">//百度的IP</span></span><br><span class="line">            System.out.println(address_2.toString());</span><br><span class="line">            System.out.println(address_2.getHostName());</span><br><span class="line">            System.out.println(address_2.getHostAddress());</span><br><span class="line">            </span><br><span class="line">            System.out.println(<span class="string">&quot;************&quot;</span>);</span><br><span class="line">            </span><br><span class="line">            InetAddress address_3 = InetAddress.getByName(<span class="string">&quot;www.baidu.com&quot;</span>); <span class="comment">//百度的域名</span></span><br><span class="line">            System.out.println(address_3.toString());</span><br><span class="line">            System.out.println(address_3.getHostName());</span><br><span class="line">            System.out.println(address_3.getHostAddress());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span>(UnknownHostException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;无法找到www.sina.com.cn&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出：</span></span><br><span class="line"><span class="comment">//www.sina.com.cn/120.192.83.98</span></span><br><span class="line"><span class="comment">//www.sina.com.cn</span></span><br><span class="line"><span class="comment">//120.192.83.98</span></span><br><span class="line"><span class="comment">//************</span></span><br><span class="line"><span class="comment">///39.156.66.18</span></span><br><span class="line"><span class="comment">//39.156.66.18</span></span><br><span class="line"><span class="comment">//39.156.66.18</span></span><br><span class="line"><span class="comment">//************</span></span><br><span class="line"><span class="comment">//www.baidu.com/39.156.66.18</span></span><br><span class="line"><span class="comment">//www.baidu.com</span></span><br><span class="line"><span class="comment">//39.156.66.18</span></span><br></pre></td></tr></table></figure>
-
-<p>综上，如果这个InetAddress是用主机名创建的，那么将记住并返回该主机名；否则它将返回IP地址的文本表示。</p>
-
+        <p>代码：</p>
+        
+          <a class="article-more-a" href="/2020/08/12/Java%E4%B8%ADInetAddress%E7%B1%BB%E5%AF%B9%E4%BA%8E%E4%B8%BB%E6%9C%BA%E5%9F%9F%E5%90%8D%E5%8F%8AIP%E5%9C%B0%E5%9D%80%E7%9A%84%E8%BF%94%E5%9B%9E%E6%B5%8B%E8%AF%95/#more">more >></a>
+        
       
 
       
@@ -572,9 +565,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">option = webdriver.ChromeOptions()</span><br><span class="line">option.add_argument(<span class="string">&quot;--user-data-dir=C:\\Users\\Beck\\AppData\\Local\\Google\\Chrome\\User Data&quot;</span>)</span><br><span class="line"><span class="comment">#Chrome浏览器网址栏输入：chrome://version/，在个人资料路径后找到</span></span><br><span class="line">driver = webdriver.Chrome(chrome_options=option)</span><br><span class="line">driver.get(<span class="string">&quot;https://www.cnblogs.com&quot;</span>)</span><br></pre></td></tr></table></figure>
+        <a id="more"></a>
 
-<p>要事先关闭所有已打开的chrome浏览器！！！<br>经查阅资料得知，网上也确实有此情况的介绍，<br>见《Selenium chromedriver hangs if I specify user-data-dir in Chrome options》:</p>
+<p>要事先关闭所有已打开的chrome浏览器！！！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">option = webdriver.ChromeOptions()</span><br><span class="line">option.add_argument(<span class="string">&quot;--user-data-dir=C:\\Users\\Beck\\AppData\\Local\\Google\\Chrome\\User Data&quot;</span>)</span><br><span class="line"><span class="comment">#Chrome浏览器网址栏输入：chrome://version/，在个人资料路径后找到</span></span><br><span class="line">driver = webdriver.Chrome(chrome_options=option)</span><br><span class="line">driver.get(<span class="string">&quot;https://www.cnblogs.com&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p>经查阅资料得知，网上也确实有此情况的介绍，<br>见《Selenium chromedriver hangs if I specify user-data-dir in Chrome options》:</p>
 <p>“The only one client could be connected to a debugger in one time. So, to fix the issue, when we want to enter to a user profile using a debugger - to avoid chromedriver hangs trying to connect to the debugger, we must close an existing Chrome session”</p>
 <p>翻译为：只有一个客户端可以一次连接到调试器。所以，为了解决这个问题，当我们想要使用调试器进入用户配置文件为了避免chromedriver挂起试图连接到调试器，我们必须关闭一个现有的Chrome会话。</p>
 
@@ -639,15 +636,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<p>方法参考自：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/lobtao/articles/8715260.html">https://www.cnblogs.com/lobtao/articles/8715260.html</a></p>
-<p>1、关闭STS</p>
-<p>2、删除 C:\Users\Administrator.m2 </p>
-<p>3、启动STS</p>
-<p>4、新建项目，让依赖下载完成</p>
-<p>注意：第2步的.m2文件夹要根据自己电脑的情况去找，最简单的办法是在电脑中关键词检索。</p>
-
+        <p>方法参考自：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/lobtao/articles/8715260.html">https://www.cnblogs.com/lobtao/articles/8715260.html</a></p>
+        
+          <a class="article-more-a" href="/2020/08/12/STS%E9%A1%B9%E7%9B%AE%E4%B8%ADpom.xml%E6%96%87%E4%BB%B6%E6%9C%89%E5%BC%82%E5%B8%B8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/#more">more >></a>
+        
       
 
       
@@ -709,9 +701,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>理解：<br>若<strong>A类是B类的父类</strong>，当用子类（B类）创建一个对象b，并把此对象的引用赋值给父类（A类）的对象a中时，称<strong>对象a是对象b的上转型对象</strong>。<br>例如:    <strong>A a = new A();        a = new B();</strong></p>
-<p>性质：<br>●上转型对象<strong>可以访问子类继承</strong>的成员变量或成员方法<strong>也可以访问子类重写</strong>的成员方法，但<strong>不能操纵子类新增</strong>的成员变量或成员方法。<br>●可以将上转型对象强制转回为子类对象。<br><img src="https://img-blog.csdnimg.cn/20200417093146328.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2MzYwNTMy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>优点：<br>方便面向接口的编程思想和面向抽象的编程思想，（上转型对象可理解为树的主干，其每个子类可理解为树枝）。</p>
-
+        <p>理解：<br>若<strong>A类是B类的父类</strong>，当用子类（B类）创建一个对象b，并把此对象的引用赋值给父类（A类）的对象a中时，称<strong>对象a是对象b的上转型对象</strong>。</p>
+        
+          <a class="article-more-a" href="/2020/08/12/java%E4%B8%8A%E8%BD%AC%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BC%98%E7%82%B9/#more">more >></a>
+        
       
 
       
@@ -773,12 +766,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>抽象类</strong><br>例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">abstract</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">int</span> <span class="title">sub</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> </span>&#123; </span><br><span class="line">      <span class="keyword">return</span> x-y;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>●抽象类的类名前加修饰符abstract，可以包含抽象方法（用abstract修饰，只有方法原型,没有方法的实现），也可以包含非抽象方法，可包含常规类能包含的任何成员;<br>●抽象类是没有具体实例对象的类，不能使用new方法进行实例化,只能用作超<br>类，只有当子类实现了抽象超类中的所有抽象方法，子类才不是抽象类，<br>才能产生实例，如果子类中仍有抽象方法未实现，则子类也只能是抽象类;<br>●只有抽象类才可以包含抽象方法。</p>
-<p><strong>抽象方法的优点：</strong><br>1.隐藏具体细节信息，所有的子类使用的都是相同的方法原型，其中包含了调用该方法时需要了解的全部信息;<br>2.强迫子类完成指定的行为，规定所有子类的标准行为。</p>
-
+        <p><strong>抽象类</strong></p>
+        
+          <a class="article-more-a" href="/2020/08/12/java%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%8C%E6%80%A7%E8%B4%A8%EF%BC%8C%E4%BC%98%E7%82%B9/#more">more >></a>
+        
       
 
       
