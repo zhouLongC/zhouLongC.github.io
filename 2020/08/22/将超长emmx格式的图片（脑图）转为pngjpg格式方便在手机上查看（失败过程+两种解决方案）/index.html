@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200822090629863.png#pic_center">
 <meta property="article:published_time" content="2020-08-22T03:22:36.000Z">
-<meta property="article:modified_time" content="2020-08-22T02:42:36.840Z">
+<meta property="article:modified_time" content="2020-08-22T03:02:10.021Z">
 <meta property="article:author" content="zhou_LC">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200822090629863.png#pic_center">
@@ -213,7 +213,7 @@
 <p><img src="https://img-blog.csdnimg.cn/20200822090629863.png#pic_center" alt="在这里插入图片描述"></p>
 <p><strong>失败第一次</strong>：我将图片用MindMaster（我画此脑图的软件）导出png格式后，一旦放大，图片不堪入目，因此，此种png格式的导出，对于此长图来说，图片质量太差，于是这种方法行不通。<br><strong>失败第二次</strong>：于是我便想到了svg矢量图，这种图像并不会随着图片的放大而失去图片质量，而当我直接导出svg格式，在手机上无法直接查看，于是这种方法也行不通。<br><strong>失败第三次</strong>：而导出pdf格式，又无法像保存到手机相册一样不易丢失。于是我开始查找将pdf格式转为png格式的方法，突然发现IE9浏览器竟然可以直接右键pdf页面将其保存为png格式，IE浏览器果然是一个奇特的工具，但当我兴高采烈地点下保存后，提示：意外地调用了方法或属性访问。我初步怀疑是IE的健壮性不够强，部分不兼容的地方出错后导致报错，于是，再次失败了。<br><strong>失败第四次</strong>：我突然灵机一动，先将图片导出为不会损失图片质量的svg矢量图的格式，然后用格式工厂工具将其转为png格式不就可以了吗，然而，当我用此方法操作后，发现，svg格式的原图片是正常的，但将其转为png格式后，所有文字内容发生了位置偏移，而我原本插入其中的部分示例图片也没被转到png，取而代之的是一块空白区域的填补，我的猜测是其中一部分原因可能是由于svg对于矢量图的部分内部算法与格式工厂不兼容导致的，因此，这种方式也行不通，再次失败。<br><strong>失败第五次</strong>：在经过前几次失败后，我突然发现我可是学计算机的呀，为什么不是是Python呢，果然Python有一个名叫cairosvg的第三方库，当我运行测试这个库后，发现报错：OSError: no library called “cairo” was found。（解决方案在下方）<br><strong>最终问题随之产生：如何将emmx格式的脑图转为同样清晰度的png格式图片呢？</strong></p>
 <p>在经过我一番思考后，决定跳出之前的思维模式，重写想一想解决方法，于是第一个想法便是借助第三方网站的技术，第二个想法便是滚动截屏后进行图片边缘裁剪，于是便有了以下两种解决方法的诞生。</p>
-<p><strong>解决方法一（最简单）</strong>：<br>利用第三方网站Speedpdf，那里提供了pdf的各种格式转换，我在其中找到了jpg格式的转化，由于它和png的差别也不是特别大，于是便在此网站内进行了格式转换，最终导出图片后，其清晰度可以接收，所以，这算是一种最快速的方法了。<br><strong>解决方法二（组合多种软件而巧妙解决）</strong>：这算是一种比较清奇的解决思路，将emmx格式的脑图用MindMaster打开，借助FSCapture软件的滚动截屏功能（将界面自动滚动，间断性截取整个视口的图片,最终自动拼凑），得到完整的png图片，清晰度几乎没有损失，之后用PS将图片上下右三个方向的边缘进行裁剪，而得到最终png格式图片。<br><strong>解决方法三（针对第五次失败的解决方案）</strong>：安装gtk2-runtime-2.24.32-2020-07-15-ts-win64 (1).exe后，运行cairosvg库则不再报错，于是便可以写代码了：</p>
+<p><strong>解决方法一（最简单）</strong>：<br>利用第三方网站Speedpdf，那里提供了pdf的各种格式转换，我在其中找到了jpg格式的转化，由于它和png的差别也不是特别大，于是便在此网站内进行了格式转换，最终导出图片后，其清晰度可以接收，所以，这算是一种最快速的方法了。<br><strong>解决方法二（组合多种软件而巧妙解决）</strong>：这算是一种比较清奇的解决思路，将emmx格式的脑图用MindMaster打开，借助FSCapture软件的滚动截屏功能（将界面自动滚动，间断性截取整个视口的图片,最终自动拼凑），得到完整的png图片，清晰度几乎没有损失，之后用PS将图片上下右三个方向的边缘进行裁剪，将图片保存为tiff格式（因为此图片特殊无法直接保存为png格式），接着用格式工厂工具将图片转为png格式，而得到最终png格式的图片。<br><strong>解决方法三（针对第五次失败的解决方案）</strong>：安装gtk2-runtime-2.24.32-2020-07-15-ts-win64 (1).exe后，运行cairosvg库则不再报错，于是便可以写代码了：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cairosvg</span><br><span class="line"> </span><br><span class="line">svg_img = <span class="string">&#x27;Python爬虫知识体系.svg&#x27;</span></span><br><span class="line">png_img = <span class="string">&#x27;result.png&#x27;</span></span><br><span class="line">cairosvg.svg2png(url=svg_path, write_to=png_path)</span><br></pre></td></tr></table></figure>
 <p>运行后，便得到了png格式的图片，未像第四次失败时那样发生位置偏移，二清晰度也与解决方法二平分秋色。</p>
 <p><strong>解决方法一、二、三分析：</strong><br>方法一优点在于更快，更便捷，不需额外装软件、配置环境；<br>方法二优点在于清晰度高；<br>方法三优点在于清晰度高，仅需额外装gtk2和cairosvg库，相对简便。</p>
